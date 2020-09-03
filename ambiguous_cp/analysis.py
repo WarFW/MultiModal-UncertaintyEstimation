@@ -12,4 +12,7 @@ import pickle
 import json
 import argparse
 
-script_path = Path(os.path.dirname(os.path
+script_path = Path(os.path.dirname(os.path.abspath(sys.argv[0])))
+base_path = script_path.parent.absolute()
+sys.path.append(base_path + '\\cp')
+sys.path.append(base_path 
