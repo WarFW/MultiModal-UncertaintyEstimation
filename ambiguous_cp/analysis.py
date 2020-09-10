@@ -18,4 +18,8 @@ sys.path.append(base_path + '\\cp')
 sys.path.append(base_path + '\\utils')
 from pets_classes import PETS_CLASSES, PETS_GENERIC_CLASSES
 from fitz17k_classes import FITZ17K_CLASSES, FITZ17K_GENERIC_CLASSES
-from medmnist_c
+from medmnist_classes import MEDMNIST_CLASSES, MEDMNIST_GENERIC_CLASSES
+from conformal_prediction_methods import *
+from metrics import *
+
+# Me
