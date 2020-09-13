@@ -22,4 +22,7 @@ from medmnist_classes import MEDMNIST_CLASSES, MEDMNIST_GENERIC_CLASSES
 from conformal_prediction_methods import *
 from metrics import *
 
-# Me
+# Methods
+def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib_true_class_arr, test_true_class_arr):
+    # Get prediction sets
+ 
