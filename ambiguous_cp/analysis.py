@@ -25,4 +25,5 @@ from metrics import *
 # Methods
 def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib_true_class_arr, test_true_class_arr):
     # Get prediction sets
- 
+    calib_prediction_set = compute_prediction_sets_threshold(calib_sim_score_arr, threshold)
+    test_prediction_set = compute_prediction_sets_thresh
