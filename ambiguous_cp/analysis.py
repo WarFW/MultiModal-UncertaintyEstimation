@@ -30,4 +30,5 @@ def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib
     # Compute performance metrics
     calib_coverage = overall_coverage(calib_prediction_set, calib_true_class_arr)
     test_coverage = overall_coverage(test_prediction_set, test_true_class_arr)
-    calib_samplewise_efficiency = samplewise_efficiency
+    calib_samplewise_efficiency = samplewise_efficiency(calib_prediction_set, calib_true_class_arr)
+    test_samplewise_efficiency = samplewise_efficiency(test_prediction_set, test_true_class_ar
