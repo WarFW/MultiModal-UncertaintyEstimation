@@ -42,4 +42,6 @@ def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib
     return (calib_coverage, np.mean(calib_samplewise_efficiency), test_coverage, np.mean(test_samplewise_efficiency))
 
 #Parse Arguments
-parser 
+parser = argparse.ArgumentParser()
+parser.add_argument('--exp', type=str, help='Experiment in experiment_configs to run')
+parser.add_argument('--out', type=st
