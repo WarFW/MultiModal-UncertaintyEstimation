@@ -39,4 +39,7 @@ def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib
     print(f'OVERALL EFFICIENCY (mean num of extraneous classes per sample): ')
     print(f"Calibration Set: {np.mean(calib_samplewise_efficiency)}")
     print(f"Test Set: {np.mean(test_samplewise_efficiency)}")
- 
+    return (calib_coverage, np.mean(calib_samplewise_efficiency), test_coverage, np.mean(test_samplewise_efficiency))
+
+#Parse Arguments
+parser 
