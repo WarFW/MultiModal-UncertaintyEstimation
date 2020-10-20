@@ -44,4 +44,8 @@ def performance_report(threshold, calib_sim_score_arr, test_sim_score_arr, calib
 #Parse Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--exp', type=str, help='Experiment in experiment_configs to run')
-parser.add_argument('--out', type=st
+parser.add_argument('--out', type=str, help='Where to output charts')
+args = parser.parse_args()
+
+# Parameters
+reader = open(base_path + "\\experiment_conf
