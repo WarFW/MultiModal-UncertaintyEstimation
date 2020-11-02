@@ -48,4 +48,8 @@ parser.add_argument('--out', type=str, help='Where to output charts')
 args = parser.parse_args()
 
 # Parameters
-reader = open(base_path + "\\experiment_conf
+reader = open(base_path + "\\experiment_configs\\"  + args.exp)
+config = json.load(reader)
+RESULTS_DIRECTORY = config["results_data_directory"]
+OUTPUT_RESULT_DIR = args.out
+CALIB_SIZE_CURVE 
