@@ -52,4 +52,11 @@ reader = open(base_path + "\\experiment_configs\\"  + args.exp)
 config = json.load(reader)
 RESULTS_DIRECTORY = config["results_data_directory"]
 OUTPUT_RESULT_DIR = args.out
-CALIB_SIZE_CURVE 
+CALIB_SIZE_CURVE = True
+ALPHA_CURVE = True
+UNCERTAIN_HIST = True
+PLAUSIBILITY_HISTOGRAM = True
+ORACLE = True
+ALPHA = 0.5
+NUM_SAMPLES = 100
+LOGIT_SCALE = 
