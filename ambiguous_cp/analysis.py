@@ -59,4 +59,8 @@ PLAUSIBILITY_HISTOGRAM = True
 ORACLE = True
 ALPHA = 0.5
 NUM_SAMPLES = 100
-LOGIT_SCALE = 
+LOGIT_SCALE = 100.0
+
+# Load Files
+calib_plausibility_score_arr = torch.load(RESULTS_DIRECTORY / "calib_plausibility_score_arr")
+calib_sim_score_arr = torch.load(
