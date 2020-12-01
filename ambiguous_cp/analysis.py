@@ -63,4 +63,6 @@ LOGIT_SCALE = 100.0
 
 # Load Files
 calib_plausibility_score_arr = torch.load(RESULTS_DIRECTORY / "calib_plausibility_score_arr")
-calib_sim_score_arr = torch.load(
+calib_sim_score_arr = torch.load(RESULTS_DIRECTORY / "calib_sim_score_arr")
+calib_true_class_arr = torch.load(RESULTS_DIRECTORY / "calib_true_class_arr")
+test_sim_score_arr = torch.loa
