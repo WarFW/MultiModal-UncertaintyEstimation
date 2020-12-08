@@ -67,4 +67,8 @@ calib_sim_score_arr = torch.load(RESULTS_DIRECTORY / "calib_sim_score_arr")
 calib_true_class_arr = torch.load(RESULTS_DIRECTORY / "calib_true_class_arr")
 test_sim_score_arr = torch.load(RESULTS_DIRECTORY / "test_sim_score_arr")
 test_true_class_arr = torch.load(RESULTS_DIRECTORY / "test_true_class_arr")
-n_calib 
+n_calib = calib_sim_score_arr.shape[0]
+n_test = test_sim_score_arr.shape[0]
+m = test_true_class_arr.shape[1]
+
+# Amb CP on data-mined vs.
