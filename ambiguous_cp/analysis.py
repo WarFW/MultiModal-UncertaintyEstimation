@@ -71,4 +71,9 @@ n_calib = calib_sim_score_arr.shape[0]
 n_test = test_sim_score_arr.shape[0]
 m = test_true_class_arr.shape[1]
 
-# Amb CP on data-mined vs.
+# Amb CP on data-mined vs. Normal CP on original dataset
+if ORACLE:
+    ratio = 0.5
+    print("Begin Alpha Curve")
+    # Initialize metrics lists and set size list
+    oracle_me
