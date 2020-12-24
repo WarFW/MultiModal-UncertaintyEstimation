@@ -76,4 +76,8 @@ if ORACLE:
     ratio = 0.5
     print("Begin Alpha Curve")
     # Initialize metrics lists and set size list
-    oracle_me
+    oracle_metrics = []
+    norm_metrics = []
+    amb_metrics = []
+    alpha_values = [0.1*i for i in range(1, 6)]
+    # Generate numpy
