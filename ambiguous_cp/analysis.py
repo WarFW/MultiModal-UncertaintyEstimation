@@ -80,4 +80,6 @@ if ORACLE:
     norm_metrics = []
     amb_metrics = []
     alpha_values = [0.1*i for i in range(1, 6)]
-    # Generate numpy
+    # Generate numpy matrices
+    calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
+    calib_true_class_arr_np = calib_true_class_arr.
