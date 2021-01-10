@@ -84,4 +84,7 @@ if ORACLE:
     calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
     calib_true_class_arr_np = calib_true_class_arr.detach().cpu().numpy()
     test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
-    test_true_class_arr_np = test_t
+    test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
+    # Shuffle values
+    random_order = np.random.permutation(len(test_sim_score_arr_np))
+    test
