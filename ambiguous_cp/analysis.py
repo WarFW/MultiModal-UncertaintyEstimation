@@ -87,4 +87,6 @@ if ORACLE:
     test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
     # Shuffle values
     random_order = np.random.permutation(len(test_sim_score_arr_np))
-    test
+    test_sim_score_arr_np = test_sim_score_arr_np[random_order]
+    test_true_class_arr_np = test_true_class_arr_np[random_order]
+    rando
