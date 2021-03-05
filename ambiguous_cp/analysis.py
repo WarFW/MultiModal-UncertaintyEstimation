@@ -97,4 +97,6 @@ if ORACLE:
     calib_length = min(int(ratio * len(test_sim_score_arr_np)), len(calib_sim_score_arr))
     # Loop through possible per class set sizes
     for alpha in alpha_values:
-        #Perform Conformal Predicti
+        #Perform Conformal Prediction
+        print("Performing Conformal Prediction")
+        threshold_amb = monte_carlo_cp(calib_sim_score_arr[:calib_length],
