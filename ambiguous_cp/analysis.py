@@ -94,4 +94,7 @@ if ORACLE:
     calib_sim_score_arr = calib_sim_score_arr[random_order2]
     calib_true_class_arr_np = calib_true_class_arr_np[random_order2]
     calib_plausibility_score_arr = calib_plausibility_score_arr[random_order2]
-    calib_length = min(int(ratio * len(test_sim_score_arr_np)), len(
+    calib_length = min(int(ratio * len(test_sim_score_arr_np)), len(calib_sim_score_arr))
+    # Loop through possible per class set sizes
+    for alpha in alpha_values:
+        #Perform Conformal Predicti
