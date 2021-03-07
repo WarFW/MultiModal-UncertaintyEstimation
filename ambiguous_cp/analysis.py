@@ -99,4 +99,5 @@ if ORACLE:
     for alpha in alpha_values:
         #Perform Conformal Prediction
         print("Performing Conformal Prediction")
-        threshold_amb = monte_carlo_cp(calib_sim_score_arr[:calib_length],
+        threshold_amb = monte_carlo_cp(calib_sim_score_arr[:calib_length], calib_plausibility_score_arr[:calib_length], alpha, NUM_SAMPLES)
+        threshold_oracle = compute_threshold(alpha, test_sim_score_arr_np[:c
