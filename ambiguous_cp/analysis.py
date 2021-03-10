@@ -105,4 +105,5 @@ if ORACLE:
         #Output Metrics
         print("\nAlpha Value: {alpha}".format(alpha = alpha))
         print("Normal CP:")
-       
+        norm_metrics.append(performance_report(threshold_norm, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_length:], \
+                        
