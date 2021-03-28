@@ -108,4 +108,5 @@ if ORACLE:
         norm_metrics.append(performance_report(threshold_norm, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_length:], \
                                                calib_true_class_arr_np[:calib_length], test_true_class_arr_np[calib_length:]))
         print("Oracle Normal CP:")
-        orac
+        oracle_metrics.append(performance_report(threshold_oracle, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_length:], \
+    
