@@ -111,4 +111,5 @@ if ORACLE:
         oracle_metrics.append(performance_report(threshold_oracle, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_length:], \
                                                calib_true_class_arr_np[:calib_length], test_true_class_arr_np[calib_length:]))
         print("Ambiguous CP:")
-        amb_metrics.append(performance_report(threshold_amb, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_len
+        amb_metrics.append(performance_report(threshold_amb, calib_sim_score_arr_np[:calib_length], test_sim_score_arr_np[calib_length:], \
+                                              calib_true_class_arr_np[:calib_length], test_true_class_arr_np[calib_
