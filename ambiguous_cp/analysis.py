@@ -115,4 +115,5 @@ if ORACLE:
                                               calib_true_class_arr_np[:calib_length], test_true_class_arr_np[calib_length:]))
     # Generate deltas
     delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
-    de
+    delta_amb = [amb_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(amb_metrics))]
+    delta_oracle = [oracle_metrics[i][2]+
