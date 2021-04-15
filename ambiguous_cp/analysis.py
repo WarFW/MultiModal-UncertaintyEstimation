@@ -116,4 +116,6 @@ if ORACLE:
     # Generate deltas
     delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
     delta_amb = [amb_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(amb_metrics))]
-    delta_oracle = [oracle_metrics[i][2]+
+    delta_oracle = [oracle_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(oracle_metrics))]
+    eff_norm = [norm_metrics[i][3] for i in range(0, len(norm_metrics))]
+    eff_amb = [amb_metric
