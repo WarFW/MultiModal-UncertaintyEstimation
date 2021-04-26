@@ -120,4 +120,4 @@ if ORACLE:
     eff_norm = [norm_metrics[i][3] for i in range(0, len(norm_metrics))]
     eff_amb = [amb_metrics[i][3] for i in range(0, len(amb_metrics))]
     eff_oracle = [oracle_metrics[i][3] for i in range(0, len(oracle_metrics))]
-    raw_data = {"alph
+    raw_data = {"alpha_values": alpha_values, "delta_norm": delta_norm, "delta_amb": delta_amb, "delta_oracle": delta_oracle, "eff_norm": eff_no
