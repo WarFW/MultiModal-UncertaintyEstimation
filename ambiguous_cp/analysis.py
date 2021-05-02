@@ -125,4 +125,8 @@ if ORACLE:
     print([oracle_metrics[i][0] for i in range(0, len(oracle_metrics))])
     print([oracle_metrics[i][1] for i in range(0, len(oracle_metrics))])
     print([oracle_metrics[i][2] for i in range(0, len(oracle_metrics))])
-    print([oracle_metrics[i][3] for i in range(0, len(oracle_metr
+    print([oracle_metrics[i][3] for i in range(0, len(oracle_metrics))])
+    print(delta_oracle)
+    # Generate Plots
+    plt.plot(alpha_values, delta_norm, color='blue', label='normal')
+    plt.plo
