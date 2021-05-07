@@ -129,4 +129,6 @@ if ORACLE:
     print(delta_oracle)
     # Generate Plots
     plt.plot(alpha_values, delta_norm, color='blue', label='normal')
-    plt.plo
+    plt.plot(alpha_values, delta_amb, color='red', label = 'ambiguous')
+    plt.plot(alpha_values, delta_oracle, color='green', label = 'oracle')
+    
