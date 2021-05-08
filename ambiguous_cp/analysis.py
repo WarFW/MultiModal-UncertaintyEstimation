@@ -131,4 +131,7 @@ if ORACLE:
     plt.plot(alpha_values, delta_norm, color='blue', label='normal')
     plt.plot(alpha_values, delta_amb, color='red', label = 'ambiguous')
     plt.plot(alpha_values, delta_oracle, color='green', label = 'oracle')
-    
+    plt.axhline(y = 0.0, color = 'grey', linestyle = '-')
+    plt.title(u'Alpha Value v. Target-Test Coverage Δ')
+    plt.xlabel(u'Alpha Value (α)')
+    plt
