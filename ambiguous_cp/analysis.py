@@ -134,4 +134,8 @@ if ORACLE:
     plt.axhline(y = 0.0, color = 'grey', linestyle = '-')
     plt.title(u'Alpha Value v. Target-Test Coverage Δ')
     plt.xlabel(u'Alpha Value (α)')
-    plt
+    plt.ylabel(u'Target (1-α) v. Test Coverage Δ')
+    plt.legend()
+    #plt.savefig(OUTPUT_RESULT_DIR / "Delta-Coverage_Alpha.png")
+    plt.show()
+   
