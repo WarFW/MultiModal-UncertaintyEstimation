@@ -138,4 +138,6 @@ if ORACLE:
     plt.legend()
     #plt.savefig(OUTPUT_RESULT_DIR / "Delta-Coverage_Alpha.png")
     plt.show()
-   
+    plt.plot(alpha_values, eff_norm, color='blue', label='normal')
+    plt.plot(alpha_values, eff_amb, color='red', label = 'ambiguous')
+    plt.plot(alpha_val
