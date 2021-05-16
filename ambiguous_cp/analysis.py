@@ -145,4 +145,10 @@ if ORACLE:
     plt.xlabel(u'Alpha Value (α)')
     plt.ylabel(u'Efficiency (extraneous classes per sample)')
     plt.legend()
-    #plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_A
+    #plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_Alpha.png")
+    plt.show()
+
+# CP Metrics vs. Calibration Set Size
+if CALIB_SIZE_CURVE:
+    print("Begin Calibration Set Size Curve")
+    # 
