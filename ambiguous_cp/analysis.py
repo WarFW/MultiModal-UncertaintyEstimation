@@ -142,4 +142,7 @@ if ORACLE:
     plt.plot(alpha_values, eff_amb, color='red', label = 'ambiguous')
     plt.plot(alpha_values, eff_oracle, color='green', label = 'oracle')
     plt.title(u'Oracle Normal v. Data-mined Ambiguous Efficiency')
-    plt.xlabe
+    plt.xlabel(u'Alpha Value (α)')
+    plt.ylabel(u'Efficiency (extraneous classes per sample)')
+    plt.legend()
+    #plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_A
