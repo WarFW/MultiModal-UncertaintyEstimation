@@ -151,4 +151,8 @@ if ORACLE:
 # CP Metrics vs. Calibration Set Size
 if CALIB_SIZE_CURVE:
     print("Begin Calibration Set Size Curve")
-    # 
+    # Initialize metrics lists and set size list
+    norm_metrics = []
+    amb_metrics = []
+    nums_per_class = [i for i in range(5, 40)]
+ 
