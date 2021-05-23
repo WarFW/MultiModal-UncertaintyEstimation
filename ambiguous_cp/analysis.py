@@ -158,4 +158,7 @@ if CALIB_SIZE_CURVE:
     # Loop through possible per class set sizes
     for pruned_size in nums_per_class:
         # Initialize pruned lists and num instances
-        cove
+        covered = [0 for i in range(0, test_true_class_arr.shape[1])]
+        pruned_calib_sim_score = []
+        pruned_calib_true_class = []
+        pruned
