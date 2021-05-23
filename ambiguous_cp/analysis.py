@@ -155,4 +155,7 @@ if CALIB_SIZE_CURVE:
     norm_metrics = []
     amb_metrics = []
     nums_per_class = [i for i in range(5, 40)]
- 
+    # Loop through possible per class set sizes
+    for pruned_size in nums_per_class:
+        # Initialize pruned lists and num instances
+        cove
