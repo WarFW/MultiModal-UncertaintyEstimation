@@ -164,4 +164,6 @@ if CALIB_SIZE_CURVE:
         pruned_plausibility_score = []
         for i in range(0, n_calib):
             # Find instance true class and check if num instances pruned
-            tr
+            true_class = torch.argmax(calib_true_class_arr[i])
+            if covered[true_class] >= pruned_size: continue
+            if true_class > 1000: c
