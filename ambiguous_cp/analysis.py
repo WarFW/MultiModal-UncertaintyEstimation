@@ -166,4 +166,7 @@ if CALIB_SIZE_CURVE:
             # Find instance true class and check if num instances pruned
             true_class = torch.argmax(calib_true_class_arr[i])
             if covered[true_class] >= pruned_size: continue
-            if true_class > 1000: c
+            if true_class > 1000: continue
+            # Update pruned list and num instances
+            covered[true_class] += 1
+            pruned_calib_sim_score.append(calib_sim_sc
