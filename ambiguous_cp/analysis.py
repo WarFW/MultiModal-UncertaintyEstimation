@@ -169,4 +169,6 @@ if CALIB_SIZE_CURVE:
             if true_class > 1000: continue
             # Update pruned list and num instances
             covered[true_class] += 1
-            pruned_calib_sim_score.append(calib_sim_sc
+            pruned_calib_sim_score.append(calib_sim_score_arr[i])
+            pruned_calib_true_class.append(calib_true_class_arr[i])
+            pruned_plausibility_score.append(calib_plausibility_scor
