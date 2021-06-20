@@ -174,4 +174,6 @@ if CALIB_SIZE_CURVE:
             pruned_plausibility_score.append(calib_plausibility_score_arr[i])
         # Convert lists into matrices
         pruned_calib_true_class = torch.vstack(pruned_calib_true_class)
-        pruned_calib_s
+        pruned_calib_sim_score = torch.vstack(pruned_calib_sim_score)
+        pruned_plausibility_score = torch.vstack(pruned_plausibility_score)
+        # Perform Conformal Predic
