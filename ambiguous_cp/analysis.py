@@ -171,4 +171,7 @@ if CALIB_SIZE_CURVE:
             covered[true_class] += 1
             pruned_calib_sim_score.append(calib_sim_score_arr[i])
             pruned_calib_true_class.append(calib_true_class_arr[i])
-            pruned_plausibility_score.append(calib_plausibility_scor
+            pruned_plausibility_score.append(calib_plausibility_score_arr[i])
+        # Convert lists into matrices
+        pruned_calib_true_class = torch.vstack(pruned_calib_true_class)
+        pruned_calib_s
