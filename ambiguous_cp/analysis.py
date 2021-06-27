@@ -176,4 +176,6 @@ if CALIB_SIZE_CURVE:
         pruned_calib_true_class = torch.vstack(pruned_calib_true_class)
         pruned_calib_sim_score = torch.vstack(pruned_calib_sim_score)
         pruned_plausibility_score = torch.vstack(pruned_plausibility_score)
-        # Perform Conformal Predic
+        # Perform Conformal Prediction
+        threshold_amb = monte_carlo_cp(pruned_calib_sim_score, pruned_plausibility_score, ALPHA, NUM_SAMPLES)
+        prune
