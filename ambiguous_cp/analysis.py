@@ -179,4 +179,6 @@ if CALIB_SIZE_CURVE:
         # Perform Conformal Prediction
         threshold_amb = monte_carlo_cp(pruned_calib_sim_score, pruned_plausibility_score, ALPHA, NUM_SAMPLES)
         pruned_calib_sim_score_np = pruned_calib_sim_score.detach().cpu().numpy()
-        pruned_calib_true_class_np = pruned_calib_true_cl
+        pruned_calib_true_class_np = pruned_calib_true_class.detach().cpu().numpy()
+        test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
+        test_true_class_arr_np = test_
