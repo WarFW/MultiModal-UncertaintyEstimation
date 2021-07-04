@@ -182,4 +182,8 @@ if CALIB_SIZE_CURVE:
         pruned_calib_true_class_np = pruned_calib_true_class.detach().cpu().numpy()
         test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
         test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
-        threshold_norm = compute_threshold(ALPHA, pruned_calib_sim_score_np, pruned_calib_true_class_
+        threshold_norm = compute_threshold(ALPHA, pruned_calib_sim_score_np, pruned_calib_true_class_np)
+        # Calculate Metrics
+        print("\nCalib Set Size: {Size}".format(Size = pruned_size))
+        print("Normal CP:")
+    
