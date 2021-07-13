@@ -186,4 +186,7 @@ if CALIB_SIZE_CURVE:
         # Calculate Metrics
         print("\nCalib Set Size: {Size}".format(Size = pruned_size))
         print("Normal CP:")
-        norm_metric = performance_report(threshold_norm, pruned_calib_sim_score_np, test_sim_score_arr_np, pruned_calib_true_class_n
+        norm_metric = performance_report(threshold_norm, pruned_calib_sim_score_np, test_sim_score_arr_np, pruned_calib_true_class_np, test_true_class_arr_np)
+        norm_metrics.append(norm_metric)
+        print("Ambiguous CP:")
+        amb_metric = performance
