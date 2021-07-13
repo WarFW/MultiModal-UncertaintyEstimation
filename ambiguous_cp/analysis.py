@@ -189,4 +189,5 @@ if CALIB_SIZE_CURVE:
         norm_metric = performance_report(threshold_norm, pruned_calib_sim_score_np, test_sim_score_arr_np, pruned_calib_true_class_np, test_true_class_arr_np)
         norm_metrics.append(norm_metric)
         print("Ambiguous CP:")
-        amb_metric = performance
+        amb_metric = performance_report(threshold_amb, pruned_calib_sim_score_np, test_sim_score_arr_np, pruned_calib_true_class_np, test_true_class_arr_np)
+        amb_metrics.append(amb_met
