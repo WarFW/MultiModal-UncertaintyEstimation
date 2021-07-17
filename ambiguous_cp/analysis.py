@@ -190,4 +190,7 @@ if CALIB_SIZE_CURVE:
         norm_metrics.append(norm_metric)
         print("Ambiguous CP:")
         amb_metric = performance_report(threshold_amb, pruned_calib_sim_score_np, test_sim_score_arr_np, pruned_calib_true_class_np, test_true_class_arr_np)
-        amb_metrics.append(amb_met
+        amb_metrics.append(amb_metric)
+
+    plt.plot(nums_per_class, [norm_metric[2] for norm_metric in norm_metrics], color='blue', label='normal')
+    plt.plot(nums_per_class, [amb_metric[2
