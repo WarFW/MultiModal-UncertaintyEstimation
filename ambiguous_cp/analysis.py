@@ -199,4 +199,7 @@ if CALIB_SIZE_CURVE:
     plt.xlabel("# Calib Instances Per Class")
     plt.ylabel("Coverage (proportion of true labels covered)")
     plt.legend()
-    plt.savefig(OUTPUT_RESULT_DIR / "Coverage_Size-{
+    plt.savefig(OUTPUT_RESULT_DIR / "Coverage_Size-{alpha}.png".format(alpha=int(ALPHA*100)))
+    plt.show()
+
+    plt.plot(nums_per_class, [norm_metric[3] for norm_metric in norm_metrics], color
