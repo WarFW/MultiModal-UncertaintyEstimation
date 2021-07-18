@@ -196,4 +196,7 @@ if CALIB_SIZE_CURVE:
     plt.plot(nums_per_class, [amb_metric[2] for amb_metric in amb_metrics], color='red', label = 'ambiguous')
     plt.axhline(y = 1-ALPHA, color = 'green', linestyle = '-')
     plt.title("Calib Size Per Class v. Test Coverage Curve: {alpha}".format(alpha=ALPHA))
-    plt.xlabel("# Calib Instances Per Clas
+    plt.xlabel("# Calib Instances Per Class")
+    plt.ylabel("Coverage (proportion of true labels covered)")
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "Coverage_Size-{
