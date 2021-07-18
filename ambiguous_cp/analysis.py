@@ -193,4 +193,6 @@ if CALIB_SIZE_CURVE:
         amb_metrics.append(amb_metric)
 
     plt.plot(nums_per_class, [norm_metric[2] for norm_metric in norm_metrics], color='blue', label='normal')
-    plt.plot(nums_per_class, [amb_metric[2
+    plt.plot(nums_per_class, [amb_metric[2] for amb_metric in amb_metrics], color='red', label = 'ambiguous')
+    plt.axhline(y = 1-ALPHA, color = 'green', linestyle = '-')
+    plt.
