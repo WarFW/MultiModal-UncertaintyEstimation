@@ -202,4 +202,6 @@ if CALIB_SIZE_CURVE:
     plt.savefig(OUTPUT_RESULT_DIR / "Coverage_Size-{alpha}.png".format(alpha=int(ALPHA*100)))
     plt.show()
 
-    plt.plot(nums_per_class, [norm_metric[3] for norm_metric in norm_metrics], color
+    plt.plot(nums_per_class, [norm_metric[3] for norm_metric in norm_metrics], color='blue', label='normal')
+    plt.plot(nums_per_class, [amb_metric[3] for amb_metric in amb_metrics], color='red', label = 'ambiguous')
+    plt.ti
