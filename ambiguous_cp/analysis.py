@@ -206,4 +206,6 @@ if CALIB_SIZE_CURVE:
     plt.plot(nums_per_class, [amb_metric[3] for amb_metric in amb_metrics], color='red', label = 'ambiguous')
     plt.title("Calib Size Per Class v. Test Efficiency Curve: {alpha}".format(alpha=ALPHA))
     plt.xlabel("# Calib Instances Per Class")
-    plt.ylabel("Efficiency
+    plt.ylabel("Efficiency (mean num of extraneous classes per sample)")
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_Size-{alpha}.png".format(alpha=int(ALPHA
