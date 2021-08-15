@@ -208,4 +208,9 @@ if CALIB_SIZE_CURVE:
     plt.xlabel("# Calib Instances Per Class")
     plt.ylabel("Efficiency (mean num of extraneous classes per sample)")
     plt.legend()
-    plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_Size-{alpha}.png".format(alpha=int(ALPHA
+    plt.savefig(OUTPUT_RESULT_DIR / "Efficiency_Size-{alpha}.png".format(alpha=int(ALPHA*100)))
+    plt.show()
+
+# CP Metrics vs. Alpha value
+# Delta between target and actual coverage value
+i
