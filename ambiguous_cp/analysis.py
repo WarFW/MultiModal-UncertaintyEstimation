@@ -217,4 +217,7 @@ if ALPHA_CURVE:
     print("Begin Alpha Curve")
     # Initialize metrics lists and set size list
     norm_metrics = []
-    
+    amb_metrics = []
+    alpha_values = [0.1*i for i in range(1, 6)]
+    #alpha_values = [0.025*i for i in range(1, 21)]
+    # Generate numpy matrices
