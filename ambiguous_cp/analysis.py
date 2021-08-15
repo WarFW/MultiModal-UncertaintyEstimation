@@ -213,4 +213,8 @@ if CALIB_SIZE_CURVE:
 
 # CP Metrics vs. Alpha value
 # Delta between target and actual coverage value
-i
+if ALPHA_CURVE:
+    print("Begin Alpha Curve")
+    # Initialize metrics lists and set size list
+    norm_metrics = []
+    
