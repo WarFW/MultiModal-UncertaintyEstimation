@@ -222,4 +222,6 @@ if ALPHA_CURVE:
     #alpha_values = [0.025*i for i in range(1, 21)]
     # Generate numpy matrices
     calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
-    calib_true_class_arr_np = calib_true_class_arr.detach(
+    calib_true_class_arr_np = calib_true_class_arr.detach().cpu().numpy()
+    test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
+    test_true_class_arr_np = test_true_class_arr.de
