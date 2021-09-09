@@ -224,4 +224,7 @@ if ALPHA_CURVE:
     calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
     calib_true_class_arr_np = calib_true_class_arr.detach().cpu().numpy()
     test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
-    test_true_class_arr_np = test_true_class_arr.de
+    test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
+    # Loop through possible per class set sizes
+    for alpha in alpha_values:
+        #Perform Conformal Predicti
