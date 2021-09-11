@@ -227,4 +227,6 @@ if ALPHA_CURVE:
     test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
     # Loop through possible per class set sizes
     for alpha in alpha_values:
-        #Perform Conformal Predicti
+        #Perform Conformal Prediction
+        print("Performing Conformal Prediction")
+        threshold_amb = monte_carlo_cp(calib_sim_score_arr, calib_plausibility
