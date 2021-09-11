@@ -231,4 +231,7 @@ if ALPHA_CURVE:
         print("Performing Conformal Prediction")
         threshold_amb = monte_carlo_cp(calib_sim_score_arr, calib_plausibility_score_arr, alpha, NUM_SAMPLES)
         threshold_norm = compute_threshold(alpha, calib_sim_score_arr_np, calib_true_class_arr_np)
-      
+        #Output Metrics
+        print("\nAlpha Value: {alpha}".format(alpha = alpha))
+        print("Normal CP:")
+        norm_metrics.append(
