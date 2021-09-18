@@ -240,4 +240,8 @@ if ALPHA_CURVE:
     # Generate deltas
     delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
     delta_amb = [amb_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
-    print(delta_
+    print(delta_norm)
+    print(delta_amb)
+    # Generate Plot
+    plt.plot(alpha_values, delta_norm, color='blue', label='normal')
+    plt.plot(alpha_
