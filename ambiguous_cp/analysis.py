@@ -236,4 +236,6 @@ if ALPHA_CURVE:
         print("Normal CP:")
         norm_metrics.append(performance_report(threshold_norm, calib_sim_score_arr_np, test_sim_score_arr_np, calib_true_class_arr_np, test_true_class_arr_np))
         print("Ambiguous CP:")
-        amb_metrics.append(performance_report(threshold_amb, calib_sim_score_arr_np, test_sim_score_arr_np, calib_
+        amb_metrics.append(performance_report(threshold_amb, calib_sim_score_arr_np, test_sim_score_arr_np, calib_true_class_arr_np, test_true_class_arr_np))
+    # Generate deltas
+    delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in rang
