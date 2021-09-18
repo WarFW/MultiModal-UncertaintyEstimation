@@ -238,4 +238,6 @@ if ALPHA_CURVE:
         print("Ambiguous CP:")
         amb_metrics.append(performance_report(threshold_amb, calib_sim_score_arr_np, test_sim_score_arr_np, calib_true_class_arr_np, test_true_class_arr_np))
     # Generate deltas
-    delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in rang
+    delta_norm = [norm_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
+    delta_amb = [amb_metrics[i][2]+alpha_values[i]-1 for i in range(0, len(norm_metrics))]
+    print(delta_
