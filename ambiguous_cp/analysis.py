@@ -246,4 +246,8 @@ if ALPHA_CURVE:
     plt.plot(alpha_values, delta_norm, color='blue', label='normal')
     plt.plot(alpha_values, delta_amb, color='red', label = 'ambiguous')
     plt.axhline(y = 0.0, color = 'green', linestyle = '-')
-    plt.title(u'Alph
+    plt.title(u'Alpha Value v. Target-Test Coverage Δ')
+    plt.xlabel(u'Alpha Value (α)')
+    plt.ylabel(u'Target (1-α) v. Test Coverage Δ')
+    plt.legend()
+    plt.savefi
