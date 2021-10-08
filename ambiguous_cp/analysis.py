@@ -244,4 +244,6 @@ if ALPHA_CURVE:
     print(delta_amb)
     # Generate Plot
     plt.plot(alpha_values, delta_norm, color='blue', label='normal')
-    plt.plot(alpha_
+    plt.plot(alpha_values, delta_amb, color='red', label = 'ambiguous')
+    plt.axhline(y = 0.0, color = 'green', linestyle = '-')
+    plt.title(u'Alph
