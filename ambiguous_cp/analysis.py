@@ -250,4 +250,8 @@ if ALPHA_CURVE:
     plt.xlabel(u'Alpha Value (α)')
     plt.ylabel(u'Target (1-α) v. Test Coverage Δ')
     plt.legend()
-    plt.savefi
+    plt.savefig(OUTPUT_RESULT_DIR / "Delta-Coverage_Alpha.png")
+    plt.show()
+
+# Histogram of uncertainty scores 
+# 1-np.dot(true_class_ar
