@@ -254,4 +254,5 @@ if ALPHA_CURVE:
     plt.show()
 
 # Histogram of uncertainty scores 
-# 1-np.dot(true_class_ar
+# 1-np.dot(true_class_arr, sim_score) v. 1-np.dot(plausibility_arr, sim_score) v. 1 - plausibility_arr[argmax(plausibility_arr)]*sim_score[argmax(plausibility_arr)]
+# May wan
