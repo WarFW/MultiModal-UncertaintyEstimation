@@ -255,4 +255,8 @@ if ALPHA_CURVE:
 
 # Histogram of uncertainty scores 
 # 1-np.dot(true_class_arr, sim_score) v. 1-np.dot(plausibility_arr, sim_score) v. 1 - plausibility_arr[argmax(plausibility_arr)]*sim_score[argmax(plausibility_arr)]
-# May wan
+# May want to take out junk score and renormalize
+# Reverse softmax
+if UNCERTAIN_HIST:
+    print("Begin Uncertainty Histogram")
+    # Initialize 
