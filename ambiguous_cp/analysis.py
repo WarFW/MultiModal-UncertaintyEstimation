@@ -259,4 +259,8 @@ if ALPHA_CURVE:
 # Reverse softmax
 if UNCERTAIN_HIST:
     print("Begin Uncertainty Histogram")
-    # Initialize 
+    # Initialize score lists
+    true_class_calib_scores = []
+    true_class_test_scores = []
+    plausibility_expected_scores = []
+    plausib
