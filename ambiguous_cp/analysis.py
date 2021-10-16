@@ -263,4 +263,7 @@ if UNCERTAIN_HIST:
     true_class_calib_scores = []
     true_class_test_scores = []
     plausibility_expected_scores = []
-    plausib
+    plausibility_max_scores = []
+    # Generate numpy matrices
+    calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
+    
