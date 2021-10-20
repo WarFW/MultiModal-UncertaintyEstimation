@@ -274,4 +274,6 @@ if UNCERTAIN_HIST:
     calib_sim_score_arr_np = (np.log(calib_sim_score_arr_np) + LOGIT_SCALE)/LOGIT_SCALE
     test_sim_score_arr_np = (np.log(test_sim_score_arr_np) + LOGIT_SCALE)/LOGIT_SCALE
     for i in range(0, n_calib):
-       
+        # Append scores
+        true_class_calib_scores.append(np.dot(calib_sim_score_arr_np[i], calib_true_class_arr_np[i]))
+        true_class_test_score
