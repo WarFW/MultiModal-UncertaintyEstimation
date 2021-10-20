@@ -269,4 +269,6 @@ if UNCERTAIN_HIST:
     calib_true_class_arr_np = calib_true_class_arr.detach().cpu().numpy()
     test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
     test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
-    calib_plausibility_score_arr_np = calib_plausibility_
+    calib_plausibility_score_arr_np = calib_plausibility_score_arr.detach().cpu().numpy()
+    # Invert Softmax
+    calib_sim_score_arr_np = (np.log(calib_sim_score_arr_np) + LOGIT_SCALE)/LO
