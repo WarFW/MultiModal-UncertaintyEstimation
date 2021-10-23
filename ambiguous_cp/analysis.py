@@ -278,4 +278,6 @@ if UNCERTAIN_HIST:
         true_class_calib_scores.append(np.dot(calib_sim_score_arr_np[i], calib_true_class_arr_np[i]))
         true_class_test_scores.append(np.dot(test_sim_score_arr_np[i], test_true_class_arr_np[i]))
         # Calculate plausibility scores
-        plausib
+        plausibility_point = calib_plausibility_score_arr_np[i][:-1]
+        plausibility_point = plausibility_point/np.sum(plausibility_point)
+     
