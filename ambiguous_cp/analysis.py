@@ -280,4 +280,5 @@ if UNCERTAIN_HIST:
         # Calculate plausibility scores
         plausibility_point = calib_plausibility_score_arr_np[i][:-1]
         plausibility_point = plausibility_point/np.sum(plausibility_point)
-     
+        max_at = np.argmax(plausibility_point)
+        plausibility_expected_scores.append(np.dot(calib_sim_score_arr_np[i], plausibility_point)
