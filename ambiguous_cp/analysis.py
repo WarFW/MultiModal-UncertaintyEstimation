@@ -285,4 +285,8 @@ if UNCERTAIN_HIST:
         plausibility_max_scores.append((calib_sim_score_arr_np[i][max_at] * plausibility_point[max_at]))
 
     raw_data = {"true_class_test_scores": true_class_test_scores, "plausibility_expected_scores": plausibility_expected_scores, "true_class_calib_scores": true_class_calib_scores, "plausibility_max_scores": plausibility_max_scores}
-    with open(OUTPUT_RESULT_DIR / "Histogram_Comparison.pkl", 'wb') as f:
+    with open(OUTPUT_RESULT_DIR / "Histogram_Comparison.pkl", 'wb') as f: pickle.dump(raw_data, f)
+
+    # Generate Histogram
+    bins = [0.01*i for i in range(0, 100)]
+    plt.hist(plausibility_expected_scores
