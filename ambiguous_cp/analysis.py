@@ -290,4 +290,6 @@ if UNCERTAIN_HIST:
     # Generate Histogram
     bins = [0.01*i for i in range(0, 100)]
     plt.hist(plausibility_expected_scores, bins=bins, density=True, alpha=0.5, label=u'Expected Scores $E(x, λ)$', color = 'blue')
-    plt.hist(true_class_test_scores, bin
+    plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
+    plt.xlabel('Conformity Score')
+    plt.ylabel('Frequen
