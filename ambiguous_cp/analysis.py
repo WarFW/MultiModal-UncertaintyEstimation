@@ -284,4 +284,5 @@ if UNCERTAIN_HIST:
         plausibility_expected_scores.append(np.dot(calib_sim_score_arr_np[i], plausibility_point))
         plausibility_max_scores.append((calib_sim_score_arr_np[i][max_at] * plausibility_point[max_at]))
 
-    raw_data = {"true_class_test_scores": true_class_test_scores, "plausibility_expected_scores": plausibility_expected_scores, "true_class_calib_scores": true_class_calib_sc
+    raw_data = {"true_class_test_scores": true_class_test_scores, "plausibility_expected_scores": plausibility_expected_scores, "true_class_calib_scores": true_class_calib_scores, "plausibility_max_scores": plausibility_max_scores}
+    with open(OUTPUT_RESULT_DIR / "Histogram_Comparison.pkl", 'wb') as f:
