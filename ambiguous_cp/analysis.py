@@ -292,4 +292,7 @@ if UNCERTAIN_HIST:
     plt.hist(plausibility_expected_scores, bins=bins, density=True, alpha=0.5, label=u'Expected Scores $E(x, λ)$', color = 'blue')
     plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
     plt.xlabel('Conformity Score')
-    plt.ylabel('Frequen
+    plt.ylabel('Frequency')
+    plt.title(u'Expected Scores $E(x, λ)$ Histogram')
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Expected-
