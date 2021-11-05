@@ -299,4 +299,6 @@ if UNCERTAIN_HIST:
     plt.show()
 
     plt.hist(true_class_calib_scores, bins=bins, density=True, alpha=0.5, label=u'Calib True Scores $E(x, y)$', color = 'red')
-    plt.h
+    plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
+    plt.xlabel('Conformity Score')
+  
