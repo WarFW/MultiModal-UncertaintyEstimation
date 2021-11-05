@@ -295,4 +295,8 @@ if UNCERTAIN_HIST:
     plt.ylabel('Frequency')
     plt.title(u'Expected Scores $E(x, λ)$ Histogram')
     plt.legend()
-    plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Expected-
+    plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Expected-Plausibility.png")
+    plt.show()
+
+    plt.hist(true_class_calib_scores, bins=bins, density=True, alpha=0.5, label=u'Calib True Scores $E(x, y)$', color = 'red')
+    plt.h
