@@ -301,4 +301,7 @@ if UNCERTAIN_HIST:
     plt.hist(true_class_calib_scores, bins=bins, density=True, alpha=0.5, label=u'Calib True Scores $E(x, y)$', color = 'red')
     plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
     plt.xlabel('Conformity Score')
-  
+    plt.ylabel('Frequency')
+    plt.title(u'Calib True Scores $E(x, y)$ Histogram')
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / 
