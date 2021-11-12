@@ -304,4 +304,7 @@ if UNCERTAIN_HIST:
     plt.ylabel('Frequency')
     plt.title(u'Calib True Scores $E(x, y)$ Histogram')
     plt.legend()
-    plt.savefig(OUTPUT_RESULT_DIR / 
+    plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Calib-True.png")
+    plt.show()
+
+    plt.hist(plausibility_max_scores, bins=bins, density=True, alpha=0.5, label=u'Top-1 Expec
