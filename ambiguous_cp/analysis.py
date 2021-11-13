@@ -315,3 +315,9 @@ if UNCERTAIN_HIST:
     plt.legend()
     plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Argmax-Plausibility.png")
     plt.show()
+
+# Confusion Matrix of Plausibilities
+if PLAUSIBILITY_HISTOGRAM:
+    print("Begin Plausibility Histogram")
+    # Initialize Score Matrices
+    true_pl
