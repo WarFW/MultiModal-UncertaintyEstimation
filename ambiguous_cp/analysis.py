@@ -308,4 +308,7 @@ if UNCERTAIN_HIST:
     plt.show()
 
     plt.hist(plausibility_max_scores, bins=bins, density=True, alpha=0.5, label=u'Top-1 Expected Scores $E(x, argmax_{k}λ_{k})$', color = 'purple')
-    plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True
+    plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
+    plt.xlabel('Conformity Score')
+    plt.ylabel('Frequency')
+    plt.title(u'Top-1 Expected Scores $E(x, argmax
