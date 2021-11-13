@@ -311,4 +311,7 @@ if UNCERTAIN_HIST:
     plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True Scores $E(x, y)$', color = 'green')
     plt.xlabel('Conformity Score')
     plt.ylabel('Frequency')
-    plt.title(u'Top-1 Expected Scores $E(x, argmax
+    plt.title(u'Top-1 Expected Scores $E(x, argmax_{k}λ_{k})$ Histogram')
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Argmax-Plausibility.png")
+    plt.show()
