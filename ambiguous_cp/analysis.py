@@ -307,4 +307,5 @@ if UNCERTAIN_HIST:
     plt.savefig(OUTPUT_RESULT_DIR / "Conformity_Histogram_Calib-True.png")
     plt.show()
 
-    plt.hist(plausibility_max_scores, bins=bins, density=True, alpha=0.5, label=u'Top-1 Expec
+    plt.hist(plausibility_max_scores, bins=bins, density=True, alpha=0.5, label=u'Top-1 Expected Scores $E(x, argmax_{k}λ_{k})$', color = 'purple')
+    plt.hist(true_class_test_scores, bins=bins, density=True, alpha=0.5, label=u'Test True
