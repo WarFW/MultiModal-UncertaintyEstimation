@@ -324,4 +324,5 @@ if PLAUSIBILITY_HISTOGRAM:
     other_plausibilities = []
     junk_plausibilities = []
     # Generate numpy matrices
-    calib_si
+    calib_sim_score_arr_np = calib_sim_score_arr.detach().cpu().numpy()
+    calib_true_class_arr_np = calib_true_class_arr.detach().cpu().num
