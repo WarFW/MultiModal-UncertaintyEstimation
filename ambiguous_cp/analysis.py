@@ -320,4 +320,8 @@ if UNCERTAIN_HIST:
 if PLAUSIBILITY_HISTOGRAM:
     print("Begin Plausibility Histogram")
     # Initialize Score Matrices
-    true_pl
+    true_plausibilities = []
+    other_plausibilities = []
+    junk_plausibilities = []
+    # Generate numpy matrices
+    calib_si
