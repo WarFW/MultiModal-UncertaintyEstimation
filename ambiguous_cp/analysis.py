@@ -328,4 +328,6 @@ if PLAUSIBILITY_HISTOGRAM:
     calib_true_class_arr_np = calib_true_class_arr.detach().cpu().numpy()
     test_sim_score_arr_np = test_sim_score_arr.detach().cpu().numpy()
     test_true_class_arr_np = test_true_class_arr.detach().cpu().numpy()
-    
+    calib_plausibility_score_arr_np = calib_plausibility_score_arr.detach().cpu().numpy()
+    for i in range(0, n_calib):
+        # Calculate scor
