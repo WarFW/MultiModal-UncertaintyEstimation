@@ -333,4 +333,6 @@ if PLAUSIBILITY_HISTOGRAM:
         # Calculate scores
         true_class = torch.argmax(calib_true_class_arr[i])
         true = calib_plausibility_score_arr_np[i][true_class]
-        junk = calib_pla
+        junk = calib_plausibility_score_arr_np[i][-1]
+        other = np.sum(calib_plausibility_score_arr_np[i])-true-junk
+        # Add to score li
