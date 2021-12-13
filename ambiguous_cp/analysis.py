@@ -335,4 +335,8 @@ if PLAUSIBILITY_HISTOGRAM:
         true = calib_plausibility_score_arr_np[i][true_class]
         junk = calib_plausibility_score_arr_np[i][-1]
         other = np.sum(calib_plausibility_score_arr_np[i])-true-junk
-        # Add to score li
+        # Add to score lists
+        junk_plausibilities.append(junk)
+        true_plausibilities.append(true)
+        other_plausibilities.append(other)
+    # Generate Histo
