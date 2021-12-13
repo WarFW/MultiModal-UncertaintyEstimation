@@ -339,4 +339,6 @@ if PLAUSIBILITY_HISTOGRAM:
         junk_plausibilities.append(junk)
         true_plausibilities.append(true)
         other_plausibilities.append(other)
-    # Generate Histo
+    # Generate Histogram
+    bins = [0.01*i for i in range(0, 101)]
+    plt.hist(true_plausibilities, bins=bins, density=True, alpha=0.5, label
