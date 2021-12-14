@@ -344,4 +344,7 @@ if PLAUSIBILITY_HISTOGRAM:
     plt.hist(true_plausibilities, bins=bins, density=True, alpha=0.5, label=u'$λ_{y}$', color = 'green')
     plt.xlabel(u'Plausibility Score (λ)')
     plt.ylabel('Frequency')
-    plt.title(u'Intended Class Plaus
+    plt.title(u'Intended Class Plausibility Distribution')
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "True_Class_Histogram-Plausibility.png")
+    plt
