@@ -341,4 +341,7 @@ if PLAUSIBILITY_HISTOGRAM:
         other_plausibilities.append(other)
     # Generate Histogram
     bins = [0.01*i for i in range(0, 101)]
-    plt.hist(true_plausibilities, bins=bins, density=True, alpha=0.5, label
+    plt.hist(true_plausibilities, bins=bins, density=True, alpha=0.5, label=u'$λ_{y}$', color = 'green')
+    plt.xlabel(u'Plausibility Score (λ)')
+    plt.ylabel('Frequency')
+    plt.title(u'Intended Class Plaus
