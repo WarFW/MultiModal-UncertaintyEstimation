@@ -350,4 +350,8 @@ if PLAUSIBILITY_HISTOGRAM:
     plt.show()
 
     plt.hist(junk_plausibilities, bins=bins, density=True, alpha=0.5, label=u'$λ_{j}$', color = 'red')
-    plt.xlab
+    plt.xlabel(u'Plausibility Score (λ)')
+    plt.ylabel('Frequency')
+    plt.title(u'Junk Plausibility Distribution')
+    plt.legend()
+    
