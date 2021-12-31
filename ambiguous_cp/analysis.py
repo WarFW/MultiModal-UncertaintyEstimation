@@ -354,4 +354,7 @@ if PLAUSIBILITY_HISTOGRAM:
     plt.ylabel('Frequency')
     plt.title(u'Junk Plausibility Distribution')
     plt.legend()
-    
+    plt.savefig(OUTPUT_RESULT_DIR / "Junk_Class_Histogram-Plausibility.png")
+    plt.show()
+
+    plt.hist(other_plausibilities, bins=bins, den
