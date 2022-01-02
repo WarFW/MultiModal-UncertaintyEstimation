@@ -357,4 +357,6 @@ if PLAUSIBILITY_HISTOGRAM:
     plt.savefig(OUTPUT_RESULT_DIR / "Junk_Class_Histogram-Plausibility.png")
     plt.show()
 
-    plt.hist(other_plausibilities, bins=bins, den
+    plt.hist(other_plausibilities, bins=bins, density=True, alpha=0.5, label=u'$\sum_{i\\neq y \\neq j}^{}\lambda_{i}$', color = 'purple')
+    plt.xlabel('Plausibility Score (λ)')
+    plt.ylabel('Frequenc
