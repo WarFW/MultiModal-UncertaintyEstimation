@@ -363,3 +363,4 @@ if PLAUSIBILITY_HISTOGRAM:
     plt.title(u'Other Class Plausibility Distribution')
     plt.legend()
     plt.savefig(OUTPUT_RESULT_DIR / "Other_Class_Histogram-Plausibility.png")
+    plt.show()
