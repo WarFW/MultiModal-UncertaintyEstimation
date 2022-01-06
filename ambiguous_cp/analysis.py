@@ -359,4 +359,7 @@ if PLAUSIBILITY_HISTOGRAM:
 
     plt.hist(other_plausibilities, bins=bins, density=True, alpha=0.5, label=u'$\sum_{i\\neq y \\neq j}^{}\lambda_{i}$', color = 'purple')
     plt.xlabel('Plausibility Score (λ)')
-    plt.ylabel('Frequenc
+    plt.ylabel('Frequency')
+    plt.title(u'Other Class Plausibility Distribution')
+    plt.legend()
+    plt.savefig(OUTPUT_RESULT_DIR / "Other_Class_Histogram-Plausibility.png")
