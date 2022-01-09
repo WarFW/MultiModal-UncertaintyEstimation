@@ -14,4 +14,7 @@ import argparse
 
 script_path = Path(os.path.dirname(os.path.abspath(sys.argv[0])))
 base_path = script_path.parent.absolute()
-sys.pat
+sys.path.append(base_path + '\\cp')
+sys.path.append(base_path + '\\utils')
+from pets_classes import PETS_CLASSES, PETS_GENERIC_CLASSES
+f
