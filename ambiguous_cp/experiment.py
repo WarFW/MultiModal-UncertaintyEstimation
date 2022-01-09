@@ -10,4 +10,8 @@ import torch
 import json
 import open_clip
 from transformers import AutoTokenizer, CLIPTextModelWithProjection, CLIPModel, CLIPProcessor
-i
+import argparse
+
+script_path = Path(os.path.dirname(os.path.abspath(sys.argv[0])))
+base_path = script_path.parent.absolute()
+sys.pat
