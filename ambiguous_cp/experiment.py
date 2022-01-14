@@ -30,4 +30,6 @@ args = parser.parse_args()
 
 #Parameters
 #-----------------------------------------------------------------------------------
-reade
+reader = open(base_path + "\\experiment_configs\\"  + args.exp)
+config = json.load(reader)
+TEST_IMAGE_DIRECTORY = config["test_image_directo
