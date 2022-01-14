@@ -26,4 +26,8 @@ from metrics import *
 #-----------------------------------------------------------------------------------
 parser = argparse.ArgumentParser()
 parser.add_argument('--exp', type=str, help='Experiment in experiment_configs to run')
-args = parse
+args = parser.parse_args()
+
+#Parameters
+#-----------------------------------------------------------------------------------
+reade
