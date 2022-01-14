@@ -23,4 +23,7 @@ from conformal_prediction_methods import *
 from metrics import *
 
 #Parse Arguments
-#-----------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+parser = argparse.ArgumentParser()
+parser.add_argument('--exp', type=str, help='Experiment in experiment_configs to run')
+args = parse
