@@ -32,4 +32,7 @@ args = parser.parse_args()
 #-----------------------------------------------------------------------------------
 reader = open(base_path + "\\experiment_configs\\"  + args.exp)
 config = json.load(reader)
-TEST_IMAGE_DIRECTORY = config["test_image_directo
+TEST_IMAGE_DIRECTORY = config["test_image_directory"]
+IMAGE_PLAUSIBILITIES = config["intermediate_data_directory"]
+RESULTS_DIRECTORY = config["results_data_directory"]
+CLASSIFICATION_CHECKPOINT
