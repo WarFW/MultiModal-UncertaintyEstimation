@@ -35,4 +35,7 @@ config = json.load(reader)
 TEST_IMAGE_DIRECTORY = config["test_image_directory"]
 IMAGE_PLAUSIBILITIES = config["intermediate_data_directory"]
 RESULTS_DIRECTORY = config["results_data_directory"]
-CLASSIFICATION_CHECKPOINT
+CLASSIFICATION_CHECKPOINT = config["classification_checkpoint"]
+if config["dataset"] == 'MedMNIST':
+    LABELS = MEDMNIST_CLASSES
+elif config["dataset"] == 'FitzPatrick17k'
