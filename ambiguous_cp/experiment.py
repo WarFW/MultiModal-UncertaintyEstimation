@@ -45,4 +45,8 @@ else:
 ALPHA = 0.05
 NUM_SAMPLES = 1000
 USE_SOFTMAX = True
-LOGIT_SCALE = 100.0 if USE_SOFTMAX el
+LOGIT_SCALE = 100.0 if USE_SOFTMAX else 1.0
+MODEL_ID = CLASSIFICATION_CHECKPOINT
+
+#Model Methods
+#----------------------------------------------------------------------------
