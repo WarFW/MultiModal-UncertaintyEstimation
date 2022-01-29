@@ -38,4 +38,11 @@ RESULTS_DIRECTORY = config["results_data_directory"]
 CLASSIFICATION_CHECKPOINT = config["classification_checkpoint"]
 if config["dataset"] == 'MedMNIST':
     LABELS = MEDMNIST_CLASSES
-elif config["dataset"] == 'FitzPatrick17k'
+elif config["dataset"] == 'FitzPatrick17k':
+    LABELS = FITZ17K_CLASSES
+else:
+    LABELS = None
+ALPHA = 0.05
+NUM_SAMPLES = 1000
+USE_SOFTMAX = True
+LOGIT_SCALE = 100.0 if USE_SOFTMAX el
