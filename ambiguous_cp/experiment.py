@@ -49,4 +49,7 @@ LOGIT_SCALE = 100.0 if USE_SOFTMAX else 1.0
 MODEL_ID = CLASSIFICATION_CHECKPOINT
 
 #Model Methods
-#----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+def openclip_image_preprocess(image):
+    image = preprocess(image).unsqueeze(0).to(device)
+    with torch.no_grad(), torch.cuda.amp.autocas
