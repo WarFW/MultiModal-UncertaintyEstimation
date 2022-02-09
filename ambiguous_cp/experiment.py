@@ -52,4 +52,7 @@ MODEL_ID = CLASSIFICATION_CHECKPOINT
 #-----------------------------------------------------------------------------------
 def openclip_image_preprocess(image):
     image = preprocess(image).unsqueeze(0).to(device)
-    with torch.no_grad(), torch.cuda.amp.autocas
+    with torch.no_grad(), torch.cuda.amp.autocast():
+        image_logits = model.encode_image(image)
+        image_logits /= image_logits.norm(dim=-1, keepdim=True)
+    return image_lo
