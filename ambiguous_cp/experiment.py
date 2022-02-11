@@ -59,4 +59,7 @@ def openclip_image_preprocess(image):
 
 def openclip_text_preprocess(text):
     text = tokenizer(text).to(device)
-    with torch.no_grad(), torch.cuda.am
+    with torch.no_grad(), torch.cuda.amp.autocast():
+        text_logits = model.encode_text(text)
+        text_logits /= text_logits.norm(dim=-1, keepdim=True)
+    return text_logits.to(
