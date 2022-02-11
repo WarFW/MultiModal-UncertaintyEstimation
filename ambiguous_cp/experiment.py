@@ -55,4 +55,8 @@ def openclip_image_preprocess(image):
     with torch.no_grad(), torch.cuda.amp.autocast():
         image_logits = model.encode_image(image)
         image_logits /= image_logits.norm(dim=-1, keepdim=True)
-    return image_lo
+    return image_logits.to("cpu")
+
+def openclip_text_preprocess(text):
+    text = tokenizer(text).to(device)
+    with torch.no_grad(), torch.cuda.am
