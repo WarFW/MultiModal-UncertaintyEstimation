@@ -69,4 +69,6 @@ def openclip_process(image_logits, text_logits):
     return (LOGIT_SCALE * image_logits @ text_logits.T).softmax(dim=-1)[0]
 
 def performance_report(threshold):
-    # Get predictio
+    # Get prediction sets
+    calib_prediction_set = compute_prediction_sets_threshold(calib_sim_score_arr, threshold)
+    test_prediction_set = compute_prediction_set
