@@ -62,4 +62,7 @@ def openclip_text_preprocess(text):
     with torch.no_grad(), torch.cuda.amp.autocast():
         text_logits = model.encode_text(text)
         text_logits /= text_logits.norm(dim=-1, keepdim=True)
-    return text_logits.to(
+    return text_logits.to("cpu")
+
+def openclip_process(image_logits, text_logits):
+    image_logits, text_logits = image_logits.type(torch.float32), text_logits.type(torch.f
