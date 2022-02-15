@@ -65,4 +65,8 @@ def openclip_text_preprocess(text):
     return text_logits.to("cpu")
 
 def openclip_process(image_logits, text_logits):
-    image_logits, text_logits = image_logits.type(torch.float32), text_logits.type(torch.f
+    image_logits, text_logits = image_logits.type(torch.float32), text_logits.type(torch.float32)
+    return (LOGIT_SCALE * image_logits @ text_logits.T).softmax(dim=-1)[0]
+
+def performance_report(threshold):
+    # Get predictio
