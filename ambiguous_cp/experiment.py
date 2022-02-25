@@ -71,4 +71,6 @@ def openclip_process(image_logits, text_logits):
 def performance_report(threshold):
     # Get prediction sets
     calib_prediction_set = compute_prediction_sets_threshold(calib_sim_score_arr, threshold)
-    test_prediction_set = compute_prediction_set
+    test_prediction_set = compute_prediction_sets_threshold(test_sim_score_arr, threshold)
+    # Compute performance metrics
+    calib_coverage = overall_coverage(calib_prediction_set, c
