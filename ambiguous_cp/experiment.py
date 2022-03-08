@@ -79,3 +79,6 @@ def performance_report(threshold):
     test_samplewise_efficiency = samplewise_efficiency(test_prediction_set, test_true_class_arr)
     # Output Performance Metrics
     print(f"OVERALL COVERAGE (proportion of true labels covered):")
+    print(f"Calibration Set: {calib_coverage}")
+    print(f"Test Set: {test_coverage}")
+    print(f'OVERALL EFFICIENCY (mean num of extraneous classes 
