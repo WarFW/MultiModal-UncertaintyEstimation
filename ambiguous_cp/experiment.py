@@ -81,4 +81,6 @@ def performance_report(threshold):
     print(f"OVERALL COVERAGE (proportion of true labels covered):")
     print(f"Calibration Set: {calib_coverage}")
     print(f"Test Set: {test_coverage}")
-    print(f'OVERALL EFFICIENCY (mean num of extraneous classes 
+    print(f'OVERALL EFFICIENCY (mean num of extraneous classes per sample): ')
+    print(f"Calibration Set: {np.mean(calib_samplewise_efficiency)}")
+    print(f"Test Set: {np.mean(test_samplewise_effici
