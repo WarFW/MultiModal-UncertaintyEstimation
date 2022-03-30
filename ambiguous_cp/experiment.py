@@ -83,4 +83,8 @@ def performance_report(threshold):
     print(f"Test Set: {test_coverage}")
     print(f'OVERALL EFFICIENCY (mean num of extraneous classes per sample): ')
     print(f"Calibration Set: {np.mean(calib_samplewise_efficiency)}")
-    print(f"Test Set: {np.mean(test_samplewise_effici
+    print(f"Test Set: {np.mean(test_samplewise_efficiency)}")
+
+#Initialize Model
+#-----------------------------------------------------------------------------------
+print("Initializing Mod
