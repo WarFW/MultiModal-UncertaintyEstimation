@@ -87,4 +87,6 @@ def performance_report(threshold):
 
 #Initialize Model
 #-----------------------------------------------------------------------------------
-print("Initializing Mod
+print("Initializing Models")
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print("CUDA ENABLED: {}".format(str(torch.cuda.is_available()
