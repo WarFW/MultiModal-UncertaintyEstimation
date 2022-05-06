@@ -89,4 +89,9 @@ def performance_report(threshold):
 #-----------------------------------------------------------------------------------
 print("Initializing Models")
 device = "cuda" if torch.cuda.is_available() else "cpu"
-print("CUDA ENABLED: {}".format(str(torch.cuda.is_available()
+print("CUDA ENABLED: {}".format(str(torch.cuda.is_available())))
+model, _, preprocess = open_clip.create_model_and_transforms(MODEL_ID)
+tokenizer = open_clip.get_tokenizer(MODEL_ID)
+model.to(device)
+
+#Generate Label Logits
