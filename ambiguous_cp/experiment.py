@@ -95,3 +95,6 @@ tokenizer = open_clip.get_tokenizer(MODEL_ID)
 model.to(device)
 
 #Generate Label Logits
+#-----------------------------------------------------------------------------------
+print("Preprocess Text Prompts")
+PROMPT_GENERATOR = l
