@@ -97,4 +97,6 @@ model.to(device)
 #Generate Label Logits
 #-----------------------------------------------------------------------------------
 print("Preprocess Text Prompts")
-PROMPT_GENERATOR = l
+PROMPT_GENERATOR = lambda cls : f"{cls}."
+prompt_list = [PROMPT_GENERATOR(cls) for id, cls in LABELS.items()]
+label_logits = openclip_text_preprocess(prompt
