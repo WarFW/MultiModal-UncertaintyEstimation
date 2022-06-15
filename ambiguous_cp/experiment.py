@@ -99,4 +99,8 @@ model.to(device)
 print("Preprocess Text Prompts")
 PROMPT_GENERATOR = lambda cls : f"{cls}."
 prompt_list = [PROMPT_GENERATOR(cls) for id, cls in LABELS.items()]
-label_logits = openclip_text_preprocess(prompt
+label_logits = openclip_text_preprocess(prompt_list)
+
+#Generate Calibration Matrices
+#-----------------------------------------------------------------------------------
+p
