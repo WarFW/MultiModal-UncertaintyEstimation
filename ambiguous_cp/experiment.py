@@ -103,4 +103,7 @@ label_logits = openclip_text_preprocess(prompt_list)
 
 #Generate Calibration Matrices
 #-----------------------------------------------------------------------------------
-p
+print("Generating Calibration Matrices")
+calib_true_class_arr = []
+calib_sim_score_arr = []
+calib_plausibility_score_arr = []
