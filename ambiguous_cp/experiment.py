@@ -107,3 +107,6 @@ print("Generating Calibration Matrices")
 calib_true_class_arr = []
 calib_sim_score_arr = []
 calib_plausibility_score_arr = []
+#Loop through image
+for label in os.listdir(CALIB_IMAGE_DIRECTORY):
+    print("Beginning Calibration Embedding Generation: {label}".format(label
