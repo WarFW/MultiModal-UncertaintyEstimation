@@ -109,4 +109,8 @@ calib_sim_score_arr = []
 calib_plausibility_score_arr = []
 #Loop through image
 for label in os.listdir(CALIB_IMAGE_DIRECTORY):
-    print("Beginning Calibration Embedding Generation: {label}".format(label
+    print("Beginning Calibration Embedding Generation: {label}".format(label=label))
+    avg = torch.zeros(len(LABELS.items())+1)
+    num_images = 0
+    for img in os.listdir(CALIB_IMAGE_DIRECTORY / label):
+        # Retrieve plausib
