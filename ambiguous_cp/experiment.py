@@ -113,4 +113,6 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
     avg = torch.zeros(len(LABELS.items())+1)
     num_images = 0
     for img in os.listdir(CALIB_IMAGE_DIRECTORY / label):
-        # Retrieve plausib
+        # Retrieve plausibilities array
+        try: 
+            plausibility_arr = torch.load(IMAGE_PLAUSIBILITIES / label / (img.split('.')[0]+"_plausibilities"
