@@ -120,4 +120,7 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
             print("Error")
             continue
         # Build label array
-        class_onehot = torch.zeros(len(LAB
+        class_onehot = torch.zeros(len(LABELS.items()))
+        class_onehot[int(label)] = 1
+        # Build similarity array
+        image = Image.open(CALIB_IMA
