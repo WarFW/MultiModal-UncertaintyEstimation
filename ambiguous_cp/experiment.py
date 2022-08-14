@@ -115,4 +115,9 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
     for img in os.listdir(CALIB_IMAGE_DIRECTORY / label):
         # Retrieve plausibilities array
         try: 
-            plausibility_arr = torch.load(IMAGE_PLAUSIBILITIES / label / (img.split('.')[0]+"_plausibilities"
+            plausibility_arr = torch.load(IMAGE_PLAUSIBILITIES / label / (img.split('.')[0]+"_plausibilities"))
+        except:
+            print("Error")
+            continue
+        # Build label array
+        class_onehot = torch.zeros(len(LAB
