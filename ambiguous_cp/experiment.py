@@ -123,4 +123,6 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
         class_onehot = torch.zeros(len(LABELS.items()))
         class_onehot[int(label)] = 1
         # Build similarity array
-        image = Image.open(CALIB_IMA
+        image = Image.open(CALIB_IMAGE_DIRECTORY / label / img)
+        image_logit = openclip_image_preprocess(image)
+        label_probs = openclip_process(image_logit, label_l
