@@ -125,4 +125,7 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
         # Build similarity array
         image = Image.open(CALIB_IMAGE_DIRECTORY / label / img)
         image_logit = openclip_image_preprocess(image)
-        label_probs = openclip_process(image_logit, label_l
+        label_probs = openclip_process(image_logit, label_logits)
+        # Append to matrices
+        calib_true_class_arr.append(class_onehot)
+        calib_sim_score_arr.append(label_probs
