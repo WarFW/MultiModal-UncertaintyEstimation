@@ -131,4 +131,8 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
         calib_sim_score_arr.append(label_probs)
         calib_plausibility_score_arr.append(plausibility_arr)
         # Update metrics
-        avg = avg + plausibilit
+        avg = avg + plausibility_arr
+        num_images += 1
+        if num_images >= NUM_SAMPLES: break
+    avg = avg/len(os.listdir(CALIB_IMAGE_DIRECTORY / label))
+   
