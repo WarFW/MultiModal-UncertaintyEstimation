@@ -138,4 +138,8 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
     print(avg[int(label)])
 #Append Matrices
 calib_true_class_arr = torch.vstack(calib_true_class_arr)
-calib_sim_score_arr 
+calib_sim_score_arr = torch.vstack(calib_sim_score_arr)
+calib_plausibility_score_arr = torch.vstack(calib_plausibility_score_arr)
+
+#Generate Test Matrices
+#-----------------------
