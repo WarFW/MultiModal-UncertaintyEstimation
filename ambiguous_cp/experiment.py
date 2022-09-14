@@ -128,4 +128,7 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
         label_probs = openclip_process(image_logit, label_logits)
         # Append to matrices
         calib_true_class_arr.append(class_onehot)
-        calib_sim_score_arr.append(label_probs
+        calib_sim_score_arr.append(label_probs)
+        calib_plausibility_score_arr.append(plausibility_arr)
+        # Update metrics
+        avg = avg + plausibilit
