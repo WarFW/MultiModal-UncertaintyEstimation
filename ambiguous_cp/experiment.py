@@ -135,4 +135,7 @@ for label in os.listdir(CALIB_IMAGE_DIRECTORY):
         num_images += 1
         if num_images >= NUM_SAMPLES: break
     avg = avg/len(os.listdir(CALIB_IMAGE_DIRECTORY / label))
-   
+    print(avg[int(label)])
+#Append Matrices
+calib_true_class_arr = torch.vstack(calib_true_class_arr)
+calib_sim_score_arr 
