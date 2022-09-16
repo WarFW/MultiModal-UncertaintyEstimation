@@ -142,4 +142,7 @@ calib_sim_score_arr = torch.vstack(calib_sim_score_arr)
 calib_plausibility_score_arr = torch.vstack(calib_plausibility_score_arr)
 
 #Generate Test Matrices
-#-----------------------
+#-----------------------------------------------------------------------------------
+print("Generating Test Matrices")
+test_true_class_arr = []
+test_sim_s
