@@ -145,4 +145,7 @@ calib_plausibility_score_arr = torch.vstack(calib_plausibility_score_arr)
 #-----------------------------------------------------------------------------------
 print("Generating Test Matrices")
 test_true_class_arr = []
-test_sim_s
+test_sim_score_arr = []
+#Loop through image
+for label in os.listdir(TEST_IMAGE_DIRECTORY):
+    print("Beginning Test Embedding Generation: {
