@@ -154,4 +154,6 @@ for label in os.listdir(TEST_IMAGE_DIRECTORY):
         class_onehot = torch.zeros(len(LABELS.items()))
         class_onehot[int(label)] = 1
         test_true_class_arr.append(class_onehot)
-     
+        # Build similarity array
+        image = Image.open(TEST_IMAGE_DIRECTORY / label / img)
+        image_logit = openclip_image_p
