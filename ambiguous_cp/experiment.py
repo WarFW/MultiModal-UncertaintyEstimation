@@ -151,4 +151,7 @@ for label in os.listdir(TEST_IMAGE_DIRECTORY):
     print("Beginning Test Embedding Generation: {label}".format(label=label))
     for img in os.listdir(TEST_IMAGE_DIRECTORY / label):
         # Build label array
-        cl
+        class_onehot = torch.zeros(len(LABELS.items()))
+        class_onehot[int(label)] = 1
+        test_true_class_arr.append(class_onehot)
+     
