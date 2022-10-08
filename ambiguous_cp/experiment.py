@@ -148,4 +148,7 @@ test_true_class_arr = []
 test_sim_score_arr = []
 #Loop through image
 for label in os.listdir(TEST_IMAGE_DIRECTORY):
-    print("Beginning Test Embedding Generation: {
+    print("Beginning Test Embedding Generation: {label}".format(label=label))
+    for img in os.listdir(TEST_IMAGE_DIRECTORY / label):
+        # Build label array
+        cl
