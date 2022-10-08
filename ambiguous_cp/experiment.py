@@ -156,4 +156,7 @@ for label in os.listdir(TEST_IMAGE_DIRECTORY):
         test_true_class_arr.append(class_onehot)
         # Build similarity array
         image = Image.open(TEST_IMAGE_DIRECTORY / label / img)
-        image_logit = openclip_image_p
+        image_logit = openclip_image_preprocess(image)
+        label_probs = openclip_process(image_logit, label_logits)
+        test_sim_score_arr.append(label_probs)
+#Append Matrices
