@@ -166,4 +166,6 @@ test_sim_score_arr = torch.vstack(test_sim_score_arr)
 #Perform Conformal Prediction
 #-----------------------------------------------------------------------------------
 #Save Data Arrays
-torch.save(calib_plausibility_score_arr, RESU
+torch.save(calib_plausibility_score_arr, RESULTS_DIRECTORY / "calib_plausibility_score_arr")
+torch.save(calib_sim_score_arr, RESULTS_DIRECTORY / "calib_sim_score_arr")
+torch.save
