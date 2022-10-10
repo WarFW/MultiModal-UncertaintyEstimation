@@ -160,3 +160,8 @@ for label in os.listdir(TEST_IMAGE_DIRECTORY):
         label_probs = openclip_process(image_logit, label_logits)
         test_sim_score_arr.append(label_probs)
 #Append Matrices
+test_true_class_arr = torch.vstack(test_true_class_arr)
+test_sim_score_arr = torch.vstack(test_sim_score_arr)
+
+#Perform Conformal Prediction
+#----
