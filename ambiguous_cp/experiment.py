@@ -164,4 +164,6 @@ test_true_class_arr = torch.vstack(test_true_class_arr)
 test_sim_score_arr = torch.vstack(test_sim_score_arr)
 
 #Perform Conformal Prediction
-#----
+#-----------------------------------------------------------------------------------
+#Save Data Arrays
+torch.save(calib_plausibility_score_arr, RESU
