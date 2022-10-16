@@ -168,4 +168,6 @@ test_sim_score_arr = torch.vstack(test_sim_score_arr)
 #Save Data Arrays
 torch.save(calib_plausibility_score_arr, RESULTS_DIRECTORY / "calib_plausibility_score_arr")
 torch.save(calib_sim_score_arr, RESULTS_DIRECTORY / "calib_sim_score_arr")
-torch.save
+torch.save(calib_true_class_arr, RESULTS_DIRECTORY / "calib_true_class_arr")
+torch.save(test_sim_score_arr, RESULTS_DIRECTORY / "test_sim_score_arr")
+t
