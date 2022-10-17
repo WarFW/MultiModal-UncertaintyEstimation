@@ -170,4 +170,6 @@ torch.save(calib_plausibility_score_arr, RESULTS_DIRECTORY / "calib_plausibility
 torch.save(calib_sim_score_arr, RESULTS_DIRECTORY / "calib_sim_score_arr")
 torch.save(calib_true_class_arr, RESULTS_DIRECTORY / "calib_true_class_arr")
 torch.save(test_sim_score_arr, RESULTS_DIRECTORY / "test_sim_score_arr")
-t
+torch.save(test_true_class_arr, RESULTS_DIRECTORY / "test_true_class_arr")
+#Perform Conformal Prediction
+print("Performing Conformal Predicti
