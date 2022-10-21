@@ -172,4 +172,6 @@ torch.save(calib_true_class_arr, RESULTS_DIRECTORY / "calib_true_class_arr")
 torch.save(test_sim_score_arr, RESULTS_DIRECTORY / "test_sim_score_arr")
 torch.save(test_true_class_arr, RESULTS_DIRECTORY / "test_true_class_arr")
 #Perform Conformal Prediction
-print("Performing Conformal Predicti
+print("Performing Conformal Prediction")
+threshold_amb = monte_carlo_cp(calib_sim_score_arr, calib_plausibility_score_arr, ALPHA, NUM_SAMPLES)
+calib_sim_score_arr = calib_sim_scor
