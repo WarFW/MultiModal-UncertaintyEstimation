@@ -176,4 +176,6 @@ print("Performing Conformal Prediction")
 threshold_amb = monte_carlo_cp(calib_sim_score_arr, calib_plausibility_score_arr, ALPHA, NUM_SAMPLES)
 calib_sim_score_arr = calib_sim_score_arr.detach().cpu().numpy()
 calib_true_class_arr = calib_true_class_arr.detach().cpu().numpy()
-test_sim_score_arr = test_sim_sco
+test_sim_score_arr = test_sim_score_arr.detach().cpu().numpy()
+test_true_class_arr = test_true_class_arr.detach().cpu().numpy()
+threshold_norm = compute_threshold(ALPHA, cal
