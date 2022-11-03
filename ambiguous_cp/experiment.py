@@ -182,4 +182,5 @@ threshold_norm = compute_threshold(ALPHA, calib_sim_score_arr, calib_true_class_
 #Output Metrics
 print("Normal CP:")
 performance_report(threshold_norm)
-print("\
+print("\nAmbiguous CP:")
+performance_report(threshold_amb)
