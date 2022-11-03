@@ -178,4 +178,8 @@ calib_sim_score_arr = calib_sim_score_arr.detach().cpu().numpy()
 calib_true_class_arr = calib_true_class_arr.detach().cpu().numpy()
 test_sim_score_arr = test_sim_score_arr.detach().cpu().numpy()
 test_true_class_arr = test_true_class_arr.detach().cpu().numpy()
-threshold_norm = compute_threshold(ALPHA, cal
+threshold_norm = compute_threshold(ALPHA, calib_sim_score_arr, calib_true_class_arr)
+#Output Metrics
+print("Normal CP:")
+performance_report(threshold_norm)
+print("\
