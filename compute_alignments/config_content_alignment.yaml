@@ -1,1 +1,2 @@
-calibration_dataset_dir: "/home/hwei/reesearch/d
+calibration_dataset_dir: "/home/hwei/reesearch/datasets/web_scraping_0922_google-hybrid_medmnist_lazy-load-fix_50size"
+results_store_dir: "/home/hwei/reesearch/experiments/msmarco-bert-base_0922_go
