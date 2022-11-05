@@ -1,2 +1,4 @@
 calibration_dataset_dir: "/home/hwei/reesearch/datasets/web_scraping_0922_google-hybrid_medmnist_lazy-load-fix_50size"
-results_store_dir: "/home/hwei/reesearch/experiments/msmarco-bert-base_0922_go
+results_store_dir: "/home/hwei/reesearch/experiments/msmarco-bert-base_0922_google-hybrid_medmnist_lazy-load-fix_sentence-splitting_50size"
+
+class_list_csv: "/home/hwei/reesearch/zero-shot-conformal-prediction/medmnist/medmnist_classe
