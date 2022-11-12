@@ -16,4 +16,4 @@ context_encoder:
 
 max_tokens: 512
 token_window_length: 256
-sentence_win
+sentence_window_length: 10
