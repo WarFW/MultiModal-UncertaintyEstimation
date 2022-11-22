@@ -10,4 +10,6 @@ For each sample, returns ratio of number of false negatives to the number of exp
 Inputs:
     - prediction_set_arr:   a boolean array representing the coverage sets 
                                 predicted for each image.
-                            dim: (num_examples, num_clas
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) represents 
+                                whether class_j is in the predic
