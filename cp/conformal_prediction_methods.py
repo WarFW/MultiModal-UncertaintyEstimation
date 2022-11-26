@@ -19,4 +19,8 @@ Inputs:
                             dim: (num_examples, num_classes)
                             element at (example_i, class_j) represents
                                 whether class_j is in the prediction set of
-                                ex
+                                example_i.
+Output:
+    an array of length (true_class_arr), containing the loss for each sample
+'''
+def samplewise_loss(conformal_set_a
