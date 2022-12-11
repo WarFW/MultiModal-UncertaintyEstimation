@@ -32,4 +32,8 @@ Set the Loss Function for Conformal Risk Control here.
 LOSS_FUNCTION = lambda pred_arr, true_arr: np.nanmean(samplewise_loss(pred_arr, true_arr))
 
 '''
-Compute the optimal threshold for classification such that the conformal risk control guarantee would still be sati
+Compute the optimal threshold for classification such that the conformal risk control guarantee would still be satisfied:
+    E(LOSS using threshold) <= alpha
+    threshold := inf{E(LOSS using threshold) <= (n+1)/n*alpha - 1/(n+1)}
+Inputs:
+    - alp
