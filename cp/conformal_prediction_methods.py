@@ -36,4 +36,5 @@ Compute the optimal threshold for classification such that the conformal risk co
     E(LOSS using threshold) <= alpha
     threshold := inf{E(LOSS using threshold) <= (n+1)/n*alpha - 1/(n+1)}
 Inputs:
-    - alp
+    - alpha:                the confidence used to compute the risk control
+                                threshold (e.g. 0.0
