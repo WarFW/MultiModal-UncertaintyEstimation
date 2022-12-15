@@ -39,4 +39,6 @@ Inputs:
     - alpha:                the confidence used to compute the risk control
                                 threshold (e.g. 0.05)
     - probability_arr:      an array representing the predictions per class
-                                for each sampl
+                                for each sample.
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) repr
