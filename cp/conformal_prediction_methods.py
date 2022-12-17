@@ -41,4 +41,6 @@ Inputs:
     - probability_arr:      an array representing the predictions per class
                                 for each sample.
                             dim: (num_examples, num_classes)
-                            element at (example_i, class_j) repr
+                            element at (example_i, class_j) represents
+                                P(class_j | example_i)
+    - true_class_arr:       a boolean array representing t
