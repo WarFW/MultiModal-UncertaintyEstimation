@@ -51,4 +51,7 @@ Inputs:
                                 example_i.
 Ouptut:
     the optimal (i.e. lowest) threshold that satisfies the conformal risk control
-        constra
+        constraints.
+Cite: https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/multilabel-classification-mscoco.ipynb
+    '''
+def compute_threshold(alp
