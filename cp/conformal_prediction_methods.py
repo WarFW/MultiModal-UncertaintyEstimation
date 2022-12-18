@@ -48,4 +48,7 @@ Inputs:
                             dim: (num_examples, num_classes)
                             element at (example_i, class_j) represents
                                 whether class_j is in the prediction set of
-     
+                                example_i.
+Ouptut:
+    the optimal (i.e. lowest) threshold that satisfies the conformal risk control
+        constra
