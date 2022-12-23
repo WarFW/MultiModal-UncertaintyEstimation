@@ -57,4 +57,9 @@ Cite: https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/
 def compute_threshold(alpha, probability_arr: np.array, true_class_arr: np.array):
     exp_loss = lambda threshold: LOSS_FUNCTION(probability_arr >= threshold, true_class_arr)
     N = np.shape(probability_arr)[0]
-    return brentq(lambda trial_thresh: exp_loss(trial_thresh) - ((N+1.)/N*alpha - 1/(N+1)),
+    return brentq(lambda trial_thresh: exp_loss(trial_thresh) - ((N+1.)/N*alpha - 1/(N+1)), 0, 1)
+
+'''
+Compute the conformal prediction sets for each sample, given their scores and a threshold.
+Inputs: 
+    - threshol
