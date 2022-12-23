@@ -62,4 +62,6 @@ def compute_threshold(alpha, probability_arr: np.array, true_class_arr: np.array
 '''
 Compute the conformal prediction sets for each sample, given their scores and a threshold.
 Inputs: 
-    - threshol
+    - threshold:            the threshold above which classification scores
+                                are considered positive, and below which 
+               
