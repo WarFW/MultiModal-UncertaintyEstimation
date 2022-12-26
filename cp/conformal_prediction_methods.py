@@ -66,4 +66,6 @@ Inputs:
                                 are considered positive, and below which 
                                 scores are considered negative.
     - probability_arr:      an array representing the predictions per class
-                            
+                                for each sample.
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j
