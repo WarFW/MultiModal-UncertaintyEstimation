@@ -77,4 +77,8 @@ Ouptut:
             whether class_j is in the prediction set of
             example_i.
 '''
-def compute_prediction_sets_threshold(probability_arr, t
+def compute_prediction_sets_threshold(probability_arr, threshold):
+    return probability_arr >= threshold
+
+'''
+Compute the conformal prediction sets for each sample, given their scores and a fixed targe
