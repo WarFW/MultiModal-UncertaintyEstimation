@@ -91,4 +91,6 @@ Inputs:
                             dim: (num_examples, num_classes)
                             element at (example_i, class_j) represents
                                 P(class_j | example_i)
-Ou
+Ouptut:
+    a boolean array representing the coverage sets predicted for each image.
+        dim: (num_examples, num_class
