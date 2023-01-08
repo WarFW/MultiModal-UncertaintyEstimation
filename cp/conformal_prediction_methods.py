@@ -88,4 +88,7 @@ Inputs:
                                 scores are considered negative.
     - probability_arr:      an array representing the predictions per class
                                 for each sample.
-                            dim: (num_examples, n
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) represents
+                                P(class_j | example_i)
+Ou
