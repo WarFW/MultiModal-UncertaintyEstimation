@@ -102,4 +102,7 @@ Ouptut:
 
 # BEGIN FIXED SET SIZE EXPERIMENTS
 def compute_prediction_sets_fixed_size(probability_arr, size):
-    indices = np.argsort(probability
+    indices = np.argsort(probability_arr, axis=1)[:, ::-1][:, 0:size]
+    res = np.zeros(probability_arr.shape)
+    np.put_along_axis(res, indices, 1, axis=1)
+    ret
