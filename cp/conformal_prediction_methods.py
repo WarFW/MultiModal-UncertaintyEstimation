@@ -98,4 +98,8 @@ Ouptut:
             whether class_j is in the prediction set of
             example_i.
 '''
-# END CON
+# END CONFORMAL RISK CONTROL
+
+# BEGIN FIXED SET SIZE EXPERIMENTS
+def compute_prediction_sets_fixed_size(probability_arr, size):
+    indices = np.argsort(probability
