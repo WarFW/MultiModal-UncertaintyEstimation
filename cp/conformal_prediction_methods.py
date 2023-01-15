@@ -110,4 +110,9 @@ def compute_prediction_sets_fixed_size(probability_arr, size):
 
 # BEGIN SET SIZE CALIBRATION / INFERENCING
 def set_size_inference_prec_recall(conformal_set_arr: np.array, true_class_arr: np.array, method='global'):
-    pred_set_sizes = np.sum(conformal_set_arr, axis=1, keep
+    pred_set_sizes = np.sum(conformal_set_arr, axis=1, keepdims=True)
+    all_set_sizes = np.unique(pred_set_sizes)
+
+    prec_list = []
+    recall_list = []
+    for set_size in all_s
