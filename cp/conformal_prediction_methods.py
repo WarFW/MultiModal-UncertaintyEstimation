@@ -124,4 +124,9 @@ def set_size_inference_prec_recall(conformal_set_arr: np.array, true_class_arr: 
     return np.array(prec_list), np.array(recall_list)
 
 def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.array, method='global'):
-    pred_set_sizes = np.sum(con
+    pred_set_sizes = np.sum(conformal_set_arr, axis=1, keepdims=True)
+    all_set_sizes = np.unique(pred_set_sizes)
+
+    tpr_list = []
+    fpr_list = []
+    for set
