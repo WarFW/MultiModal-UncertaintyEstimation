@@ -119,4 +119,8 @@ def set_size_inference_prec_recall(conformal_set_arr: np.array, true_class_arr: 
         this_pred_arr = conformal_set_arr * (pred_set_sizes >= set_size)
         
         prec_list.append(precision_score(true_class_arr, this_pred_arr, average=('binary' if method=='global' else 'samples')))
-        recall_list.append(recall_score(true_class_arr, this_pred
+        recall_list.append(recall_score(true_class_arr, this_pred_arr, average=('binary' if method=='global' else 'samples')))
+    
+    return np.array(prec_list), np.array(recall_list)
+
+def
