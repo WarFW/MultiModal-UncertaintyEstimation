@@ -136,4 +136,8 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
         disagree = this_pred_arr != true_class_arr
 
         tp = agree[this_pred_arr == 1]
-        tn = agree
+        tn = agree[this_pred_arr == 0]
+        fp = disagree[this_pred_arr == 1]
+        fn = disagree[this_pred_arr == 0]
+        
+        tp_sum = np.sum(tp, ax
