@@ -132,4 +132,8 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
     for set_size in all_set_sizes:
         this_pred_arr = conformal_set_arr * (pred_set_sizes >= set_size)
 
-        agree = this_pred_
+        agree = this_pred_arr == true_class_arr
+        disagree = this_pred_arr != true_class_arr
+
+        tp = agree[this_pred_arr == 1]
+        tn = agree
