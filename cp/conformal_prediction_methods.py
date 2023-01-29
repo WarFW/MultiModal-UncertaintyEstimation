@@ -142,4 +142,7 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
         
         tp_sum = np.sum(tp, axis=(None if method=='global' else 1))
         tn_sum = np.sum(tn, axis=(None if method=='global' else 1))
-        fp_sum = np.sum(fp, ax
+        fp_sum = np.sum(fp, axis=(None if method=='global' else 1))
+        fn_sum = np.sum(fn, axis=(None if method=='global' else 1))
+
+        tpr_list.append(np.mean(tp
