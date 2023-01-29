@@ -148,4 +148,8 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
         tpr_list.append(np.mean(tp_sum / (tp_sum + fn_sum)))
         fpr_list.append(np.mean(fp_sum / (fp_sum + tn_sum)))
 
-    return np.array(tpr_list), 
+    return np.array(tpr_list), np.array(fpr_list)
+# END SET SIZE CALIBRATION / INFERENCING
+
+# AMBIGUOUS CONFORMAL PREDICTION
+from torch.distributions.one_hot_categorical imp
