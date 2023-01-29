@@ -140,4 +140,6 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
         fp = disagree[this_pred_arr == 1]
         fn = disagree[this_pred_arr == 0]
         
-        tp_sum = np.sum(tp, ax
+        tp_sum = np.sum(tp, axis=(None if method=='global' else 1))
+        tn_sum = np.sum(tn, axis=(None if method=='global' else 1))
+        fp_sum = np.sum(fp, ax
