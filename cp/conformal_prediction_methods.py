@@ -155,4 +155,5 @@ def set_size_inference_tpr_fpr(conformal_set_arr: np.array, true_class_arr: np.a
 from torch.distributions.one_hot_categorical import OneHotCategorical
 from torch.distributions.categorical import Categorical 
 
-def monte_carlo_cp_deprecated(predictions: t
+def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.Tensor, alpha: float, sample_num: int):
+    assert predictions.size(dim=0) == predictions.size(dim
