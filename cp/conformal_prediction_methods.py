@@ -156,4 +156,6 @@ from torch.distributions.one_hot_categorical import OneHotCategorical
 from torch.distributions.categorical import Categorical 
 
 def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.Tensor, alpha: float, sample_num: int):
-    assert predictions.size(dim=0) == predictions.size(dim
+    assert predictions.size(dim=0) == predictions.size(dim=0) and predictions.size(dim=0) == plausibilities.size(dim=0)
+
+    assert predictions.size(dim=1) == predictions.size(dim=1) and predicti
