@@ -167,4 +167,8 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
     cp_actual = []
     cp_pred = []
     for i in range(sample_num):
-        for j in range(predictions.siz
+        for j in range(predictions.size(dim=0)):
+            if (results[i][j][plausibilities.size(dim=1) - 1] == 1):
+                continue
+
+            cp_actual.appen
