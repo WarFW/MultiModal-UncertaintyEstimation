@@ -162,4 +162,9 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
 
     distro = OneHotCategorical(probs=plausibilities)
 
-    results = distro.sample(sample_
+    results = distro.sample(sample_shape=torch.Size([sample_num]))
+
+    cp_actual = []
+    cp_pred = []
+    for i in range(sample_num):
+        for j in range(predictions.siz
