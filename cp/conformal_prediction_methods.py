@@ -171,4 +171,7 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
             if (results[i][j][plausibilities.size(dim=1) - 1] == 1):
                 continue
 
-            cp_actual.appen
+            cp_actual.append(results[i][j][0:plausibilities.size(dim=1) - 1])
+            cp_pred.append(predictions[j])
+
+    #this is from https://github.com/aangelo
