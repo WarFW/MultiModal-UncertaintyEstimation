@@ -174,4 +174,5 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
             cp_actual.append(results[i][j][0:plausibilities.size(dim=1) - 1])
             cp_pred.append(predictions[j])
 
-    #this is from https://github.com/aangelo
+    #this is from https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/imagenet-smallest-sets.ipynb
+    cal_scores = 1 - torch.sum(torch.stack(c
