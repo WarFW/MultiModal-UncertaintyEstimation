@@ -181,4 +181,7 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
     qhat = np.quantile(cal_scores.numpy(), q_level, interpolation='higher')
     return 1-qhat
 
-def monte_carlo_cp(predictions: torch.
+def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alpha: float, sample_num: int):
+    assert predictions.size(dim=0) == plausibilities.size(dim=0)
+
+  
