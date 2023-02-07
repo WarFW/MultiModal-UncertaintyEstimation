@@ -177,4 +177,8 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
     #this is from https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/imagenet-smallest-sets.ipynb
     cal_scores = 1 - torch.sum(torch.stack(cp_actual, 0) * torch.stack(cp_pred, 0), axis=1)
 
-    q_level = np.ceil((predictions.size(dim=0)+1) * (1-alpha))/predictions.size(dim=
+    q_level = np.ceil((predictions.size(dim=0)+1) * (1-alpha))/predictions.size(dim=0)
+    qhat = np.quantile(cal_scores.numpy(), q_level, interpolation='higher')
+    return 1-qhat
+
+def monte_carlo_cp(predictions: torch.
