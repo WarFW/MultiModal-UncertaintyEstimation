@@ -184,4 +184,8 @@ def monte_carlo_cp_deprecated(predictions: torch.Tensor, plausibilities: torch.T
 def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alpha: float, sample_num: int):
     assert predictions.size(dim=0) == plausibilities.size(dim=0)
 
-  
+    assert predictions.size(dim=1) == plausibilities.size(dim=1) - 1
+
+    distro = OneHotCategorical(probs=plausibilities)
+
+    results = distro.sample(sam
