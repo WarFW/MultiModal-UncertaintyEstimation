@@ -188,4 +188,10 @@ def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alph
 
     distro = OneHotCategorical(probs=plausibilities)
 
-    results = distro.sample(sam
+    results = distro.sample(sample_shape=torch.Size([sample_num]))
+
+    cp_actual = []
+    cp_pred = []
+    for i in range(sample_num):
+        this_actual = []
+     
