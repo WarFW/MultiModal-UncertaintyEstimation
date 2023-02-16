@@ -197,3 +197,8 @@ def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alph
         this_pred = []
         for j in range(predictions.size(dim=0)):
             if (results[i][j][plausibilities.size(dim=1) - 1] == 1):
+                continue
+
+            this_actual.append(results[i][j][0:plausibilities.size(dim=1) - 1])
+            this_pred.append(predictions[j])
+ 
