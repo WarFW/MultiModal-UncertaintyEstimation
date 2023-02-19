@@ -201,4 +201,5 @@ def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alph
 
             this_actual.append(results[i][j][0:plausibilities.size(dim=1) - 1])
             this_pred.append(predictions[j])
- 
+        cp_actual.append(torch.stack(this_actual, dim=0) if len(this_actual) > 0 else torch.tensor([]))
+        cp_pred.append(torch.stack(this
