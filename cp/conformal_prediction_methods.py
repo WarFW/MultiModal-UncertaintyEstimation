@@ -204,4 +204,8 @@ def monte_carlo_cp(predictions: torch.Tensor, plausibilities: torch.Tensor, alph
         cp_actual.append(torch.stack(this_actual, dim=0) if len(this_actual) > 0 else torch.tensor([]))
         cp_pred.append(torch.stack(this_pred, dim=0) if len(this_pred) > 0 else torch.tensor([]))
     return compute_threshold_amb(cp_actual, cp_pred, alpha)
-def compute_threshold_amb
+def compute_threshold_amb(actual: list, pred: list, alpha):
+    assert len(actual) == len(pred)
+    m = len(actual)
+
+    #this is from http
