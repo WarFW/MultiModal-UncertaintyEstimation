@@ -208,4 +208,5 @@ def compute_threshold_amb(actual: list, pred: list, alpha):
     assert len(actual) == len(pred)
     m = len(actual)
 
-    #this is from http
+    #this is from https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/imagenet-smallest-sets.ipynb
+    cal_scores = [(1 - torch.sum(
