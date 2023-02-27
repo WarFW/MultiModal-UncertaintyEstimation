@@ -209,4 +209,6 @@ def compute_threshold_amb(actual: list, pred: list, alpha):
     m = len(actual)
 
     #this is from https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/imagenet-smallest-sets.ipynb
-    cal_scores = [(1 - torch.sum(this_actual * this_pred, axis=1) if this_actual.dim() > 1 else torch.tensor([])) for this_actual, this_pred in zip(actual, pre
+    cal_scores = [(1 - torch.sum(this_actual * this_pred, axis=1) if this_actual.dim() > 1 else torch.tensor([])) for this_actual, this_pred in zip(actual, pred)]
+
+    exp_loss = lambda threshold: 1/m * sum([(torch.sum(this_cal_score <= threshold) + 1) / (this_cal_score.size(dim=0) + 1) for 
