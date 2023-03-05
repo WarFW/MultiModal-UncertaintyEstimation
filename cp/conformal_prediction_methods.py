@@ -214,4 +214,4 @@ def compute_threshold_amb(actual: list, pred: list, alpha):
     exp_loss = lambda threshold: 1/m * sum([(torch.sum(this_cal_score <= threshold) + 1) / (this_cal_score.size(dim=0) + 1) for this_cal_score in cal_scores])
     
     N = sum([this_cal_score.size(dim=0) for this_cal_score in cal_scores])
-    return  
+    return  1 - brentq(lambda trial_thresh: exp_loss(trial_thresh) - ((N+1.)/N*(1-alpha) - 1/(N+1)), 0, 1)
