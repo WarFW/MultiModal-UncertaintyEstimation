@@ -10,4 +10,6 @@ Inputs:
                             element at (example_i, class_j) represents 
                                 whether class_j is in the prediction set of
                                 example_i.
-    - true_clas
+    - true_class_arr:       a boolean array representing the true classes
+                                for each image.
+                            dim: (num
