@@ -23,4 +23,7 @@ def samplewise_loss(conformal_set_arr: np.array, true_class_arr: np.array):
     return 1 - np.sum(np.logical_and(conformal_set_arr, true_class_arr), axis=1) / np.sum(true_class_arr, axis=1)
 
 '''
-Set the Loss Function for Conform
+Set the Loss Function for Conformal Risk Control here.
+'''
+LOSS_FUNCTION = lambda pred_arr, true_arr: np.nanmean(samplewise_loss(pred_arr, true_arr))
+
