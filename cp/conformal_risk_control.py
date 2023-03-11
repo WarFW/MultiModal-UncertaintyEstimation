@@ -17,4 +17,7 @@ Inputs:
                                 whether class_j is in the prediction set of
                                 example_i.
 Output:
-    an array of length (true_class_a
+    an array of length (true_class_arr), containing the loss for each sample
+'''
+def samplewise_loss(conformal_set_arr: np.array, true_class_arr: np.array):
+    return 1 - n
