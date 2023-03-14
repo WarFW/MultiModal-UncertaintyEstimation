@@ -39,4 +39,7 @@ Inputs:
                                 for each sample.
                             dim: (num_examples, num_classes)
                             element at (example_i, class_j) represents
-                                P
+                                P(class_j | example_i)
+    - true_class_arr:       a boolean array representing the true classes
+                                for each image.
+                   
