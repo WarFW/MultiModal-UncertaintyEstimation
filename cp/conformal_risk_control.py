@@ -35,4 +35,6 @@ Compute the optimal threshold for classification such that the conformal risk co
 Inputs:
     - alpha:                the confidence used to compute the risk control
                                 threshold (e.g. 0.05)
- 
+    - probability_arr:      an array representing the predictions per class
+                                for each sample.
+                 
