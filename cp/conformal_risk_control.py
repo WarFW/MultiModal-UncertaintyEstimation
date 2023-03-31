@@ -42,4 +42,6 @@ Inputs:
                                 P(class_j | example_i)
     - true_class_arr:       a boolean array representing the true classes
                                 for each image.
-                   
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) represents
+                                whether clas
