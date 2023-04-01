@@ -47,4 +47,8 @@ Inputs:
                                 whether class_j is in the prediction set of
                                 example_i.
 Ouptut:
-    the optimal (i.e. lowest) threshold that satisfies the confor
+    the optimal (i.e. lowest) threshold that satisfies the conformal risk control
+        constraints.
+
+Cite: https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/multilabel-classification-mscoco.ipynb
+    '''
