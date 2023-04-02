@@ -53,4 +53,6 @@ Ouptut:
 Cite: https://github.com/aangelopoulos/conformal-prediction/blob/main/notebooks/multilabel-classification-mscoco.ipynb
     '''
 def compute_threshold(alpha, probability_arr: np.array, true_class_arr: np.array):
-    exp_loss = lambda threshold: LOSS_FUNCTION(probability_a
+    exp_loss = lambda threshold: LOSS_FUNCTION(probability_arr >= threshold, true_class_arr)
+    N = np.shape(probability_arr)[0]
+    return brentq(lambda trial_thresh: exp_loss(trial_thre
