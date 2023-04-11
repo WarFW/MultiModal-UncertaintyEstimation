@@ -62,4 +62,7 @@ Compute the conformal prediction sets for each sample, given their scores and a 
 
 Inputs: 
     - threshold:            the threshold above which classification scores
-                                are considered p
+                                are considered positive, and below which 
+                                scores are considered negative.
+
+    - probability_arr:  
