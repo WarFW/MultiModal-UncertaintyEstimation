@@ -65,4 +65,6 @@ Inputs:
                                 are considered positive, and below which 
                                 scores are considered negative.
 
-    - probability_arr:  
+    - probability_arr:      an array representing the predictions per class
+                                for each sample.
+                            dim
