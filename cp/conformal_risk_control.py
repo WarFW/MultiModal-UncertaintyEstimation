@@ -67,4 +67,6 @@ Inputs:
 
     - probability_arr:      an array representing the predictions per class
                                 for each sample.
-                            dim
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) represents
+                              
