@@ -73,4 +73,7 @@ Inputs:
 
 Ouptut:
     a boolean array representing the coverage sets predicted for each image.
-        dim: (num_examples, nu
+        dim: (num_examples, num_classes
+        element at (example_i, class_j) represents 
+            whether class_j is in the prediction set of
+            example_
