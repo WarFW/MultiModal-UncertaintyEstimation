@@ -76,4 +76,9 @@ Ouptut:
         dim: (num_examples, num_classes
         element at (example_i, class_j) represents 
             whether class_j is in the prediction set of
-            example_
+            example_i.
+'''
+def compute_prediction_sets(probability_arr, threshold):
+    return probability_arr >= threshold
+
+
