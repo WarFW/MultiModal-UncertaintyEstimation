@@ -5,4 +5,6 @@ Coverage and Efficiency Metrics:
 Note that there are two universal arguments:
     - prediction_set_arr:   a boolean array representing the coverage sets 
                                 predicted for each image.
-                            dim: (n
+                            dim: (num_examples, num_classes)
+                            element at (example_i, class_j) represents 
+                                whet
