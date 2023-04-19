@@ -13,4 +13,9 @@ Note that there are two universal arguments:
                                 for each image.
                             dim: (num_examples, num_classes)
                             element at (example_i, class_j) represents
-                                whether class_j is in the prediction se
+                                whether class_j is in the prediction set of
+                                example_i.
+'''
+
+'''
+Computes the overall coverage (total true positive / total number of expec
