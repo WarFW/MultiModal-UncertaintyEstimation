@@ -18,4 +18,9 @@ Note that there are two universal arguments:
 '''
 
 '''
-Computes the overall coverage (total true positive / total number of expec
+Computes the overall coverage (total true positive / total number of expected labels).
+Inputs:
+    - prediction_set_arr:   see above
+    - true_class_arr:       see above
+Output:
+    the overall coverage across all classes and 
