@@ -30,4 +30,8 @@ def overall_coverage(conformal_set_arr: np.array, true_class_arr: np.array):
 
 
 '''
-Com
+Computes the coverage for each class.
+Inputs:
+    - prediction_set_arr:   see above
+    - true_class_arr:       see above
+Output:
