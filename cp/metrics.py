@@ -26,3 +26,8 @@ Output:
     the overall coverage across all classes and samples, as a proportion in [0, 1].
 '''
 def overall_coverage(conformal_set_arr: np.array, true_class_arr: np.array):
+    return np.sum(np.logical_and(conformal_set_arr, true_class_arr)) / np.sum(true_class_arr)
+
+
+'''
+Com
