@@ -35,3 +35,7 @@ Inputs:
     - prediction_set_arr:   see above
     - true_class_arr:       see above
 Output:
+    an array of length (true_class_arr), containing the coverage score for
+    each class.
+'''
+def class_stratified
