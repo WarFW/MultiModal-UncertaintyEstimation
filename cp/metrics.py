@@ -38,4 +38,5 @@ Output:
     an array of length (true_class_arr), containing the coverage score for
     each class.
 '''
-def class_stratified
+def class_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.array):
+    return np.sum(np.logical_and(conformal_set_arr, true_class_arr)
