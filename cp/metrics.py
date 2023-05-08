@@ -39,4 +39,10 @@ Output:
     each class.
 '''
 def class_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.array):
-    return np.sum(np.logical_and(conformal_set_arr, true_class_arr)
+    return np.sum(np.logical_and(conformal_set_arr, true_class_arr), axis=0) / np.sum(true_class_arr, axis=0)
+
+
+'''
+Computes the coverage, stratified across the size of the **expected set** of true labels.
+Inputs:
+ 
