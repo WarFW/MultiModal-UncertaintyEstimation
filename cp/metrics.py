@@ -45,4 +45,6 @@ def class_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.ar
 '''
 Computes the coverage, stratified across the size of the **expected set** of true labels.
 Inputs:
- 
+    - prediction_set_arr:   see above
+    - true_class_arr:       see above
+Output: a variable number of bins of the form (set_size, num_samples_
