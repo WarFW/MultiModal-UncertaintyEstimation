@@ -47,4 +47,6 @@ Computes the coverage, stratified across the size of the **expected set** of tru
 Inputs:
     - prediction_set_arr:   see above
     - true_class_arr:       see above
-Output: a variable number of bins of the form (set_size, num_samples_
+Output: a variable number of bins of the form (set_size, num_samples_in_bin, mean_coverage),
+            represented as 3 arrays of the same variable length:
+    - an array containing in increasi
