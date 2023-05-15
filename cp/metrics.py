@@ -54,4 +54,8 @@ Output: a variable number of bins of the form (set_size, num_samples_in_bin, mea
     - an array containing the number of samples in each bin.
     - an array containing the mean sample-wise coverage in each bin.
 '''
-def size_stratified_coverage(conformal_set_arr: np.
+def size_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.array):
+    size_arr = np.sum(true_class_arr, axis=1)
+
+    unique, unique_counts = np.unique(size_arr, return_counts=True)
+    id
