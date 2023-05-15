@@ -51,4 +51,7 @@ Output: a variable number of bins of the form (set_size, num_samples_in_bin, mea
             represented as 3 arrays of the same variable length:
     - an array containing in increasing order the size of the true label sets represented 
         by each bin.
-    - an array containing the number of samples in each b
+    - an array containing the number of samples in each bin.
+    - an array containing the mean sample-wise coverage in each bin.
+'''
+def size_stratified_coverage(conformal_set_arr: np.
