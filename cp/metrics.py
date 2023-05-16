@@ -65,4 +65,6 @@ def size_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.arr
     split_idx = np.cumsum(unique_counts)[:-1]
 
     split_conformal_set_list = np.split(sorted_conformal_set_arr, split_idx)
-    split_tr
+    split_true_class_list = np.split(sorted_true_class_arr, split_idx)
+
+    final_losses = np.array([1-LOSS_FUNCTION(this_conf_set, t
