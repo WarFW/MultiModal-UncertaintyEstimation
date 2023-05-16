@@ -72,4 +72,6 @@ def size_stratified_coverage(conformal_set_arr: np.array, true_class_arr: np.arr
     return unique, final_losses, unique_counts
 
 '''
-For
+For each sample, returns the number of extraneous classes in the prediction set relative to the expected set of labels.
+Inputs:
+    - prediction_set_ar
