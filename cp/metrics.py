@@ -79,3 +79,6 @@ Inputs:
 Output:
     an array of length (true_class_arr), containing the coverage score for
     each class.
+'''
+def samplewise_efficiency(conformal_set_arr: np.array, true_class_arr: np.array):
+    return np.sum(conformal_set_arr, axis=1) - n
