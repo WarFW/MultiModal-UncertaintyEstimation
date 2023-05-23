@@ -81,4 +81,6 @@ Output:
     each class.
 '''
 def samplewise_efficiency(conformal_set_arr: np.array, true_class_arr: np.array):
-    return np.sum(conformal_set_arr, axis=1) - n
+    return np.sum(conformal_set_arr, axis=1) - np.sum(np.logical_and(conformal_set_arr, true_class_arr), axis=1)
+
+def false_positive_rate(conformal_set_arr: np.array, true_class_arr: 
