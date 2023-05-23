@@ -88,4 +88,5 @@ def false_positive_rate(conformal_set_arr: np.array, true_class_arr: np.array):
     #return np.mean(np.nan_to_num(false_positives/np.sum(conformal_set_arr, axis = 1)))
     return np.mean(np.nan_to_num(false_positives/np.sum(true_class_arr == 0, axis = 1)))
 
-def true_positive_rate(conform
+def true_positive_rate(conformal_set_arr: np.array, true_class_arr: np.array):
+    true_positives = np.sum(np.logical_and(conformal_set_arr, true_class_arr), axis = 1)
