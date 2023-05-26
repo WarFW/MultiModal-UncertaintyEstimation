@@ -92,4 +92,8 @@ def true_positive_rate(conformal_set_arr: np.array, true_class_arr: np.array):
     true_positives = np.sum(np.logical_and(conformal_set_arr, true_class_arr), axis = 1)
     return np.mean(np.nan_to_num(true_positives/np.sum(true_class_arr, axis = 1)))
 
-def size_stratified_efficiency(conformal_set_arr: np.array, true_class
+def size_stratified_efficiency(conformal_set_arr: np.array, true_class_arr: np.array):
+    size_arr = np.sum(true_class_arr, axis=1)
+
+    unique, unique_counts = np.unique(size_arr, return_counts=True)
+  
