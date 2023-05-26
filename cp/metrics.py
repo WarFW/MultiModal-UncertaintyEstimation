@@ -98,4 +98,9 @@ def size_stratified_efficiency(conformal_set_arr: np.array, true_class_arr: np.a
     unique, unique_counts = np.unique(size_arr, return_counts=True)
     idx_arr = np.argsort(size_arr)
     sorted_conformal_set_arr = conformal_set_arr[idx_arr]
-    sorted_true_class_arr = true_
+    sorted_true_class_arr = true_class_arr[idx_arr]
+
+    split_idx = np.cumsum(unique_counts)[:-1]
+
+    split_conformal_set_list = np.split(sorted_conformal_set_arr, split_idx)
+    spl
