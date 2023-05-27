@@ -103,4 +103,6 @@ def size_stratified_efficiency(conformal_set_arr: np.array, true_class_arr: np.a
     split_idx = np.cumsum(unique_counts)[:-1]
 
     split_conformal_set_list = np.split(sorted_conformal_set_arr, split_idx)
-    spl
+    split_true_class_list = np.split(sorted_true_class_arr, split_idx)
+
+    final_efficiencies = np.array([np.mean(samplewise_efficiency(this_
