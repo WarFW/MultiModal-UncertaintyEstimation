@@ -107,4 +107,10 @@ def size_stratified_efficiency(conformal_set_arr: np.array, true_class_arr: np.a
 
     final_efficiencies = np.array([np.mean(samplewise_efficiency(this_conf_set, this_true_set)) for (this_conf_set, this_true_set) in zip(split_conformal_set_list, split_true_class_list)])
 
-    return unique, f
+    return unique, final_efficiencies, unique_counts
+'''
+Returns a tuple of arrays, .
+Inputs:
+    - prediction_set_arr:   see above
+Output:
+    a 
