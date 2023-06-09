@@ -113,4 +113,5 @@ Returns a tuple of arrays, .
 Inputs:
     - prediction_set_arr:   see above
 Output:
-    a 
+    a tuple of two arrays of the same length, each of which respectively
+    contain the set size and the number of samples with a co
