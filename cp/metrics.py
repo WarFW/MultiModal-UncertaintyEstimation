@@ -114,4 +114,8 @@ Inputs:
     - prediction_set_arr:   see above
 Output:
     a tuple of two arrays of the same length, each of which respectively
-    contain the set size and the number of samples with a co
+    contain the set size and the number of samples with a conformal set
+    having the said size.
+'''
+def prediction_set_size(conformal_set_arr: np.array):
+    set_size_arr = np.sum(conformal_s
