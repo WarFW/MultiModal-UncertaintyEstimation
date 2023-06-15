@@ -118,4 +118,5 @@ Output:
     having the said size.
 '''
 def prediction_set_size(conformal_set_arr: np.array):
-    set_size_arr = np.sum(conformal_s
+    set_size_arr = np.sum(conformal_set_arr, axis=1)
+    return np.unique(set_size_arr, return_counts=True)
