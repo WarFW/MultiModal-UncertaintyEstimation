@@ -135,3 +135,105 @@ def main():
 
             dest_rank = data[0]
             comm.send((class_id, class_name), dest=dest_rank, tag=0)
+
+            logger.info(f"MAIN: assigned ({class_id}, {class_name}) to process {dest_rank}")        
+            cnt += 1
+        
+        for i in range(size-1):
+            data = np.empty(1, dtype='i')
+            comm.Recv([data, MPI.INT], source=MPI.ANY_SOURCE, tag=0)
+
+            dest_rank = data[0]
+            comm.send((-1, "NULL"), dest=dest_rank, tag=0)
+
+    else:
+        while True:
+            comm.Send([np.array([rank], dtype='i'), MPI.INT], dest=0, tag=0)
+
+            data = comm.recv(source=0, tag=0)
+            class_id, class_name = data
+            if (class_id == -1):
+                MPI.Finalize()
+                break
+
+            baseIdx = 0
+            currPage = 1
+            goodFinish = False
+            context_url_list, img_url_list = [], []
+            while True:
+                retry = False
+
+                if baseIdx == 0:
+                    this_res_dir = config['results_store_dir'] / f"{class_id}"
+                    this_res_dir.mkdir(exist_ok=True)
+                    logger.info(f"PROCESS {rank}: Class: {class_id}, {class_name}")
+            
+                try:
+                    while currPage <= config['set_size']: 
+                        this_context_list, this_img_list = makeQuery(currPage, class_name)
+                        assert len(this_context_list) == 10 and len(this_img_list) == 10
+                        currPage += 10
+                        context_url_list.extend(this_context_list)
+                        img_url_list.extend(this_img_list)
+
+                        if currPage > config['set_size']:
+                            #logger.info(f"PROCESS {rank} class {class_id} class name {class_name} page {currPage} image list: {img_url_list} context_url_list: {context_url_list}")
+                            logger.info(f"PROCESS {rank} class {class_id} class name {class_name} page {currPage} image list: {img_url_list[0:5]} context_url_list: {context_url_list[0:5]}")
+                    if (len(context_url_list) == 0 and sum(1 for x in this_res_dir.glob('*') if x.is_file()) < config['set_size'] * 3):
+                        this_context_list, this_img_list = makeQuery(currPage, class_name)
+                        assert len(this_context_list) == 10 and len(this_img_list) == 10
+                        currPage += 10
+                        context_url_list.extend(this_context_list)
+                        img_url_list.extend(this_img_list)
+
+                    img_arg_list = [[str(this_res_dir / f"{baseIdx + idx}.image"), img_url] for idx, img_url in enumerate(img_url_list)]
+                    context_arg_list = [[str(this_res_dir / f"{baseIdx + idx}.context"), str(this_res_dir / f"{class_name}_{baseIdx + idx}.url"), context_url, img_url] for (idx, (context_url, img_url)) in enumerate(zip(context_url_list, img_url_list))]
+
+                    baseIdx += len(img_url_list)
+
+                    with concurrent.futures.ThreadPoolExecutor(max_workers=config['num_threads']) as executor:
+                        executor.map(process_both, img_arg_list, context_arg_list)
+                    context_url_list.clear()
+                    img_url_list.clear()
+
+                    if (sum(1 for x in this_res_dir.glob('*') if x.is_file()) >= config['set_size'] * 3):
+                        goodFinish = True
+                    else:
+                        retry = True
+
+
+                except HttpError as e:
+                    if e.resp.status == 429:
+                        message = ""
+                        if e.resp.get('content-type', '').startswith('application/json'):
+                            message = json.loads(e.content).get('error').get('errors')[0].get('message')
+                        if "Queries per minute per user" in message:
+                            logger.info(f"PROCESS {rank}: Queries per minute per user exceeded. Retrying in 15 seconds...")
+                            sleep(15)
+                            retry = True
+
+                        else:
+                            logger.critical(f"PROCESS {rank}" + str(traceback.format_exc()))
+                    if e.resp.status == 400:
+                        logger.critical(f"PROCESS {rank}" + str(traceback.format_exc()))
+                except Exception as e:
+                    logger.critical(f"PROCESS {rank}" + str(traceback.format_exc()))
+                finally:
+                    if goodFinish:
+                        for filePath in this_res_dir.iterdir():
+                            first = str(filePath).rindex("_")+1
+                            last = str(filePath).rindex(".")
+                            fileIdx = str(str(filePath)[first:last])
+                            if not Path(this_res_dir / f"{class_name}_{fileIdx}.image").exists() or not Path(this_res_dir / f"{class_name}_{fileIdx}.context").exists() or not Path(this_res_dir / f"{class_name}_{fileIdx}.url").exists():
+                                logger.critical(f"PROCESS {rank} class {class_id} class name {class_name}: fileindex {fileIdx} IS NOT A TRIPLE")
+                        break
+                    if not retry:
+                        dir_contents = list(this_res_dir.iterdir())
+                        if len(dir_contents) == 0:
+                            this_res_dir.rmdir()
+                        break
+                    else:
+                        continue
+
+if __name__ == "__main__":
+    main()
