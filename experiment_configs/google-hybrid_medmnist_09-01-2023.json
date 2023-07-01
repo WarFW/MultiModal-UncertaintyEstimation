@@ -1,3 +1,4 @@
 {
     "test_image_directory": "C:\\Documents\\Alaa Lab\\CP-CLIP\\datasets\\selenium-medmnist\\medmnist_microscopy",
-    "calib_image_directory": "C:\\Documents\\Alaa Lab\\CP-CLI
+    "calib_image_directory": "C:\\Documents\\Alaa Lab\\CP-CLIP\\datasets\\google-medmnist\\web_scraping_0922_google_medmnist",
+    "context_directory": "C:\\Documents\\Alaa Lab\\CP-CLIP\\
