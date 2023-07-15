@@ -9,4 +9,8 @@ from loguru import logger
 def get_wordnet_pos(treebank_tag):
 
     if treebank_tag.startswith('J'):
-        return wo
+        return wordnet.ADJ
+    elif treebank_tag.startswith('V'):
+        return wordnet.VERB
+    elif treebank_tag.startswith('N'):
+        return wordnet.
