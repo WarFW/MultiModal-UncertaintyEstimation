@@ -19,4 +19,11 @@ def get_wordnet_pos(treebank_tag):
     else:
         return ''
 
-def generate_synonyms(phrase,k
+def generate_synonyms(phrase,k):
+
+    words_pos = pos_tag(word_tokenize(phrase))
+    
+    synonyms = []
+    for (word,pos) in words_pos:
+        temp = {}
+        wn_pos = get
