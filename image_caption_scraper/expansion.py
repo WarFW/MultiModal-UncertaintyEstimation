@@ -26,4 +26,7 @@ def generate_synonyms(phrase,k):
     synonyms = []
     for (word,pos) in words_pos:
         temp = {}
-        wn_pos = get
+        wn_pos = get_wordnet_pos(pos)
+        if wn_pos:
+            for syn in wordnet.synsets(word,pos=wn_pos):
+                original = wordnet.synsets(word,pos=wn_pos)
