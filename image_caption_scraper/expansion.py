@@ -29,4 +29,7 @@ def generate_synonyms(phrase,k):
         wn_pos = get_wordnet_pos(pos)
         if wn_pos:
             for syn in wordnet.synsets(word,pos=wn_pos):
-                original = wordnet.synsets(word,pos=wn_pos)
+                original = wordnet.synsets(word,pos=wn_pos)[0]
+                path_similarity = original.path_similarity(syn)
+                for l in syn.lemmas():
+              
