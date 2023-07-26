@@ -32,4 +32,5 @@ def generate_synonyms(phrase,k):
                 original = wordnet.synsets(word,pos=wn_pos)[0]
                 path_similarity = original.path_similarity(syn)
                 for l in syn.lemmas():
-              
+                    if ((l.name() not in temp) or ((l.name() in temp) and (temp[l.name()]<path_similarity))):
+                        temp[l.name()] = original.pat
