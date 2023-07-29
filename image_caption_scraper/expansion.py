@@ -33,4 +33,8 @@ def generate_synonyms(phrase,k):
                 path_similarity = original.path_similarity(syn)
                 for l in syn.lemmas():
                     if ((l.name() not in temp) or ((l.name() in temp) and (temp[l.name()]<path_similarity))):
-                        temp[l.name()] = original.pat
+                        temp[l.name()] = original.path_similarity(syn)
+        else:
+            temp[word] = 1.0
+
+        temp = list(dict(sorted(temp.items(), key=lambda item: item[1],reverse=T
