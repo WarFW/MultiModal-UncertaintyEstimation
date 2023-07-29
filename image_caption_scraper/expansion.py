@@ -48,4 +48,9 @@ def generate_synonyms(phrase,k):
 
 def translate(phrase,driver="chromedriver"):
     chrome_options = Options()
-    chrome_o
+    chrome_options.headless = True
+    wd = webdriver.Chrome(options=chrome_options,executable_path=driver)
+
+    # cookie accept
+    tl = "ar"
+    wd.get("https://t
