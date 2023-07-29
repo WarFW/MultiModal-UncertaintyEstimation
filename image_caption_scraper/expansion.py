@@ -37,4 +37,9 @@ def generate_synonyms(phrase,k):
         else:
             temp[word] = 1.0
 
-        temp = list(dict(sorted(temp.items(), key=lambda item: item[1],reverse=T
+        temp = list(dict(sorted(temp.items(), key=lambda item: item[1],reverse=True)).keys())[:k]
+        synonyms.append(temp)
+
+    results = []
+    for element in itertools.product(*synonyms):
+        results.appen
