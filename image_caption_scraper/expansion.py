@@ -42,4 +42,10 @@ def generate_synonyms(phrase,k):
 
     results = []
     for element in itertools.product(*synonyms):
-        results.appen
+        results.append(" ".join(element))
+    
+    return results
+
+def translate(phrase,driver="chromedriver"):
+    chrome_options = Options()
+    chrome_o
