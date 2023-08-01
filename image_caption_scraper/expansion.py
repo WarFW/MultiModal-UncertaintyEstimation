@@ -53,4 +53,5 @@ def translate(phrase,driver="chromedriver"):
 
     # cookie accept
     tl = "ar"
-    wd.get("https://t
+    wd.get("https://translate.google.com.lb/?hl=en&tab=wT&sl=en&tl={tl}&text={phrase}&op=translate")
+    button = wd.find_element_by_xpath("/html/body/c-wiz/
