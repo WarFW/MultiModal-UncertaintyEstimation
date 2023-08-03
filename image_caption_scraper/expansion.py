@@ -57,4 +57,9 @@ def translate(phrase,driver="chromedriver"):
     button = wd.find_element_by_xpath("/html/body/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/span")
     button.click()
 
-    # target_languages = open("codes.tx
+    # target_languages = open("codes.txt").read().split()
+    target_languages = [
+        'zh', # chinese
+        # 'hi', # hindu
+        'es', # spanish
+     
