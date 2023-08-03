@@ -62,4 +62,8 @@ def translate(phrase,driver="chromedriver"):
         'zh', # chinese
         # 'hi', # hindu
         'es', # spanish
-     
+        'ar', # arabic
+        # 'ms', # malay
+        'ru', # russian
+        # 'bn', # bengali
+        # 'pt', #
