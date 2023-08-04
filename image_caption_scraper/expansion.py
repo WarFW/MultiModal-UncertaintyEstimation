@@ -66,4 +66,13 @@ def translate(phrase,driver="chromedriver"):
         # 'ms', # malay
         'ru', # russian
         # 'bn', # bengali
-        # 'pt', #
+        # 'pt', # portugese
+        'fr', # french
+
+        'sv', # swedish
+        # 'it', # italian
+        # 'ga', # irish
+    ]
+
+    results = []
+   
