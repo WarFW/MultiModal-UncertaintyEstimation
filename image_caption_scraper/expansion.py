@@ -75,4 +75,6 @@ def translate(phrase,driver="chromedriver"):
     ]
 
     results = []
-   
+    for i,tl in enumerate(target_languages):
+        # logger.info(f"Finished transation {i}/{len(target_languages)}")
+        print(f"Finished tran
