@@ -77,4 +77,5 @@ def translate(phrase,driver="chromedriver"):
     results = []
     for i,tl in enumerate(target_languages):
         # logger.info(f"Finished transation {i}/{len(target_languages)}")
-        print(f"Finished tran
+        print(f"Finished transation {i}/{len(target_languages)}",end="\r")
+        link = f"https://translate.google.com.lb/?hl=en&tab=wT&sl=en&tl={tl}&text={phrase}&op=translate"
