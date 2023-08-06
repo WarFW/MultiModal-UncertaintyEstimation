@@ -79,3 +79,6 @@ def translate(phrase,driver="chromedriver"):
         # logger.info(f"Finished transation {i}/{len(target_languages)}")
         print(f"Finished transation {i}/{len(target_languages)}",end="\r")
         link = f"https://translate.google.com.lb/?hl=en&tab=wT&sl=en&tl={tl}&text={phrase}&op=translate"
+        wd.get(link)
+        time.sleep(2)
+        result = wd.find_element_by_xpath("/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/d
