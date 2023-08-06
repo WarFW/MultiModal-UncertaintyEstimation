@@ -87,3 +87,9 @@ def translate(phrase,driver="chromedriver"):
     return results
 
 # phrase = "I love to play football"
+# k = 5
+# synonyms = generate_synonyms(phrase,k)
+
+# print(synonyms)
+
+# translate("ali please can you play with me?")
