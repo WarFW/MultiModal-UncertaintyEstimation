@@ -195,3 +195,135 @@ class Image_Caption_Scraper():
                 button.click()
             except:
                 pass
+
+            # self.scroll_to_end()
+            try: self.load_yahoo()
+            except: 
+                logger.info("Loaded all images for Yahoo")
+                break
+
+            html_list = self.wd.find_element(By.XPATH, '//*[@id="sres"]')
+            items = html_list.find_elements(By.TAG_NAME, "li")
+
+            # logger.info(f"There are {len(items)} images")
+
+            for content in items[start:len(items)-1]:
+                try:
+                    self.wd.execute_script("arguments[0].click();", content)
+                    time.sleep(0.5)
+                except: # Exception as e:
+                    new_html_list = self.wd.find_element(By.ID, "sres")
+                    new_items = new_html_list.find_elements(By.TAG_NAME, "li")
+                    item = new_items[i]
+                    self.wd.execute_script("arguments[0].click();", item)
+                i+=1
+                # caption = self.wd.find_element_by_class_name('title').text
+
+                try:
+                    url = content.find_element(By.TAG_NAME, 'img')
+
+                    if url.get_attribute('src') and not url.get_attribute('src').endswith('gif') and url.get_attribute('src') not in img_data:
+
+                        now = datetime.now().astimezone()
+                        now = now.strftime("%m-%d-%Y %H:%M:%S %z %Z")
+
+                        name = uuid.uuid4() # len(img_data)
+                        img_data[f'{i}']={
+                            'query':self.cfg.query,
+                            'url':url.get_attribute('src'),
+                            'caption':self.cfg.query, # caption
+                            'datetime': now,
+                            'source': 'google',
+                            'public_ip': Image_Caption_Scraper.public_ip
+                        }
+                        logger.info(f"Finished {len(img_data)}/{self.cfg.num_images} images for Yahoo.")
+                
+                except:
+                    logger.debug("Couldn't load image and caption for Yahoo")
+
+                if(len(img_data)>self.cfg.num_images-1): 
+                    logger.info(f"Finished scraping {self.cfg.num_images} for Yahoo!")
+                    break
+            
+            start = len(items)
+        return img_data
+
+    def get_flickr_images(self):
+        """Retrieve urls for images and captions from Flickr Images search engine"""
+        logger.info("Scraping flickr images")
+        self.set_target_url("flickr")
+
+        self.wd.get(self.target_url)
+        img_data = {}
+
+        start = 0
+        prevLength = 0
+        waited = False
+        while(len(img_data)<self.cfg.num_images):
+            self.scroll_to_end()
+            # scroll_to_end_flickr()
+
+            items = self.wd.find_elements(By.XPATH, '/html/body/div[1]/div/main/div[2]/div/div[2]/div')
+
+            if(len(items)==prevLength):
+                if not waited:
+                    self.wd.implicitly_wait(25)
+                    waited = True
+                else:
+                    # print("Loaded all images")
+                    break
+            prevLength = len(items)
+
+            for item in items[start:len(items)-1]:
+                style = item.get_attribute('style')
+                url = re.search(r'url\("//(.+?)"\);',style)
+                if url: 
+                    try:
+                        url = "http://"+url.group(1)
+                        caption = item.find_element(By.CLASS_NAME, 'interaction-bar').get_attribute('title')
+                        caption = caption[:re.search(r'\bby\b',caption).start()].strip()
+                        # img_data[url]=caption
+
+                        now = datetime.now().astimezone()
+                        now = now.strftime("%m-%d-%Y %H:%M:%S %z %Z")
+
+                        name = uuid.uuid4() # len(img_data)
+                        img_data[f'{i}']={
+                            'query':self.cfg.query,
+                            'url':url,
+                            'caption':caption,
+                            'datetime': now,
+                            'source': 'flickr',
+                            'public_ip': Image_Caption_Scraper.public_ip
+                        }
+
+                        logger.info(f"Finished {len(img_data)}/{self.cfg.num_images} images for Flickr.")
+                    except: pass                    
+                if(len(img_data)>self.cfg.num_images-1): 
+                    logger.info(f"Finished scraping {self.cfg.num_images} for Flickr!")
+                    break
+            start = len(items)
+        return img_data
+
+    def save_images_and_captions(self,img_data):
+        """Retrieve the images and save them in directory with the captions"""
+        query = '_'.join(self.cfg.query.lower().split())
+        
+        out_dir = self.cfg.out_dir
+        Path(out_dir).mkdir(parents=True, exist_ok=True)
+        os.chdir(out_dir)
+
+        target_folder = os.path.join(f'{self.cfg.engine}', query)
+        Path(target_folder).mkdir(parents=True, exist_ok=True)
+
+        result_items = img_data.copy()
+
+        for i,(key,val) in enumerate(img_data.items()):
+            #try:
+            url = val['url']
+            caption = val['caption']
+
+            if(url.startswith('http')):
+                read_http(url, caption, self.cfg.engine,query,key)
+
+            elif(url.startswith('data')):
