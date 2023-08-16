@@ -327,3 +327,30 @@ class Image_Caption_Scraper():
                 read_http(url, caption, self.cfg.engine,query,key)
 
             elif(url.startswith('data')):
+                read_base64(url, caption, self.cfg.engine,query,key)
+
+            else:
+                del result_items[key]
+                logger.debug(f"Couldn't save image {key}: not http nor base64 encoded.")
+            #except:
+            #    del result_items[key]
+            #    logger.debug(f"Couldn't save image {key}")
+
+        file_path = f'{self.cfg.engine}_{query}.json'
+        with open(file_path, 'w+') as fp:
+            json.dump(result_items, fp)
+        logger.info(f"Saved urls file at: {os.path.join(os.getcwd(),file_path)}")
+
+    # def save_images_data(self,img_data):
+    #     """Save only the meta data without the images"""
+    #     query = '_'.join(self.cfg.query.lower().split())
+    #     out_dir = self.cfg.out_dir
+    #     Path(out_dir).mkdir(parents=True, exist_ok=True)
+    #     os.chdir(out_dir)
+
+    #     file_path = f'{self.cfg.engine}/{query}'
+    #     Path(file_path).mkdir(parents=True, exist_ok=True)
+    #     file_path += f'/{query}.json'
+    #     with open(file_path, 'w+') as fp:
+    #         json.dump(img_data, fp)
+    #     logger.info(f"Saved json data file at: {os.path.join(os.getcwd(),file_path)}")
