@@ -10,4 +10,8 @@ PETS_CLASSES = OrderedDict(
         "6": "Birman",
         "7": "Bombay",
         "8": "Boxer",
-        "9": "British Sh
+        "9": "British Shorthair",
+        "10": "Chihuahua",
+        "11": "Egyptian Mau",
+        "12": "English Cocker Spaniel",
+        "13"
