@@ -18,4 +18,9 @@ PETS_CLASSES = OrderedDict(
         "14": "German Shorthaired",
         "15": "Great Pyrenees",
         "16": "Havanese",
-        "17": "Jap
+        "17": "Japanese Chin",
+        "18": "Keeshond",
+        "19": "Leonberger",
+        "20": "Maine Coon",
+        "21": "Miniature Pinscher",
+     
