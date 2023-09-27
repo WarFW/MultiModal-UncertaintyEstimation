@@ -14,4 +14,8 @@ PETS_CLASSES = OrderedDict(
         "10": "Chihuahua",
         "11": "Egyptian Mau",
         "12": "English Cocker Spaniel",
-        "13"
+        "13": "English Setter",
+        "14": "German Shorthaired",
+        "15": "Great Pyrenees",
+        "16": "Havanese",
+        "17": "Jap
