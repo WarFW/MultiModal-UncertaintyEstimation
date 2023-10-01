@@ -27,4 +27,8 @@ PETS_CLASSES = OrderedDict(
         "23": "Persian",
         "24": "Pomeranian",
         "25": "Pug",
-        "26": "R
+        "26": "Ragdoll",
+        "27": "Russian Blue",
+        "28": "Saint Bernard",
+        "29": "Samoyed",
+        "30": "Scottish Terri
