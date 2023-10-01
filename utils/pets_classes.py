@@ -31,4 +31,8 @@ PETS_CLASSES = OrderedDict(
         "27": "Russian Blue",
         "28": "Saint Bernard",
         "29": "Samoyed",
-        "30": "Scottish Terri
+        "30": "Scottish Terrier",
+        "31": "Shiba Inu",
+        "32": "Siamese",
+        "33": "Sphynx",
+        "34": "Staffordshire Bull
