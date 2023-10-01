@@ -23,4 +23,8 @@ PETS_CLASSES = OrderedDict(
         "19": "Leonberger",
         "20": "Maine Coon",
         "21": "Miniature Pinscher",
-     
+        "22": "New Found Land",
+        "23": "Persian",
+        "24": "Pomeranian",
+        "25": "Pug",
+        "26": "R
