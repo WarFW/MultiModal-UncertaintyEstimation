@@ -35,4 +35,11 @@ PETS_CLASSES = OrderedDict(
         "31": "Shiba Inu",
         "32": "Siamese",
         "33": "Sphynx",
-        "34": "Staffordshire Bull
+        "34": "Staffordshire Bull Terrier",
+        "35": "Wheaten Terrier",
+        "36": "Yorkshire Terrier",
+    }
+)
+
+PETS_GENERIC_CLASSES = OrderedDict(
+    {     
