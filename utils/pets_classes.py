@@ -43,3 +43,10 @@ PETS_CLASSES = OrderedDict(
 
 PETS_GENERIC_CLASSES = OrderedDict(
     {     
+	    "0": "Cat",
+        "1": "Dog",
+        "2": "Dog",
+        "3": "Dog",
+        "4": "Dog",
+        "5": "Cat",
+        "6": "Cat",
