@@ -76,3 +76,9 @@ PETS_GENERIC_CLASSES = OrderedDict(
         "30": "Dog",
         "31": "Dog",
         "32": "Cat",
+        "33": "Cat",
+        "34": "Dog",
+        "35": "Dog",
+        "36": "Dog",
+    }
+)
